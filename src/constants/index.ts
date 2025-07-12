@@ -1,183 +1,232 @@
-export const COLORS = {
-  primary: "#050816",
-  secondary: "#aaa6c3",
-  tertiary: "#151030",
-  black: {
-    100: "#100d25",
-    200: "#090325",
-  },
-  white: {
-    100: "#f3f3f3",
-  },
-};
+import {
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  figma,
+  docker,
+  Pegasus,
+  iiitek,
+  sifat,
+  dinamometro,
+  waymenu,
+  bun,
+  mui,
+} from "../assets/index";
 
-export const BREAKPOINTS = {
-  xs: "450px",
-  sm: "640px",
-  md: "768px",
-  lg: "1024px",
-  xl: "1280px",
-  "2xl": "1536px",
-};
+import type { NavLink, Service, Technology, Experience, Project } from "../types";
 
-export const ANIMATIONS = {
-  fadeIn: (direction: string, type: string, delay: number, duration: number) => {
-    const getX = () => {
-      if (direction === "left") return 100;
-      if (direction === "right") return -100;
-      return 0;
-    };
-
-    const getY = () => {
-      if (direction === "up") return 100;
-      if (direction === "down") return -100;
-      return 0;
-    };
-
-    return {
-      hidden: {
-        x: getX(),
-        y: getY(),
-        opacity: 0,
-      },
-      show: {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: type === "spring" ? "spring" : "tween",
-          delay: delay,
-          duration: duration,
-          ease: "easeOut",
-        } as const,
-      },
-    } as const;
-  },
-
-  slideIn: (direction: string, type: string, delay: number, duration: number) => {
-    const getX = () => {
-      if (direction === "left") return "-100%";
-      if (direction === "right") return "100%";
-      return 0;
-    };
-
-    const getY = () => {
-      if (direction === "up") return "100%";
-      if (direction === "down") return "100%";
-      return 0;
-    };
-
-    return {
-      hidden: {
-        x: getX(),
-        y: getY(),
-      },
-      show: {
-        x: 0,
-        y: 0,
-        transition: {
-          type: type === "spring" ? "spring" : "tween",
-          delay: delay,
-          duration: duration,
-          ease: "easeOut",
-        } as const,
-      },
-    } as const;
-  },
-
-  staggerContainer: (staggerChildren?: number, delayChildren?: number) =>
-    ({
-      hidden: {},
-      show: {
-        transition: {
-          staggerChildren: staggerChildren || 0.1,
-          delayChildren: delayChildren || 0,
-        },
-      },
-    }) as const,
-
-  textVariant: (delay?: number) =>
-    ({
-      hidden: {
-        y: -50,
-        opacity: 0,
-      },
-      show: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          duration: 1.25,
-          delay: delay || 0,
-        } as const,
-      },
-    }) as const,
-
-  zoomIn: (delay: number, duration: number) =>
-    ({
-      hidden: {
-        scale: 0,
-        opacity: 0,
-      },
-      show: {
-        scale: 1,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          delay: delay,
-          duration: duration,
-          ease: "easeOut",
-        } as const,
-      },
-    }) as const,
-};
-
-export const CAMERA_SETTINGS = {
-  position: [20, 3, 5] as [number, number, number],
-  fov: 25,
-  near: 0.1,
-  far: 200,
-};
-
-export const TILT_OPTIONS = {
-  max: 45,
-  scale: 1,
-  speed: 450,
-  transition: true,
-  axis: null,
-  reset: true,
-  easing: "cubic-bezier(.03,.98,.52,.99)",
-};
-
-export const SECTIONS = {
-  HERO: "hero",
-  ABOUT: "about",
-  WORK: "work",
-  EXPERIENCE: "experience",
-  TECH: "tech",
-  PROJECTS: "projects",
-  TESTIMONIALS: "testimonials",
-  CONTACT: "contact",
-} as const;
-
-export const NAVIGATION_LINKS = [
+export const navLinks: NavLink[] = [
   {
     id: "about",
-    title: "About",
+    title: "Sobre",
   },
   {
     id: "work",
-    title: "Work",
+    title: "Projetos",
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Contato",
   },
 ];
 
-export const SOCIAL_LINKS = {
-  github: "https://github.com/",
-  linkedin: "https://linkedin.com/in/",
-  twitter: "https://twitter.com/",
-  email: "mailto:",
-};
+const services: Service[] = [
+  {
+    title: "Engenheiro de Software",
+    icon: web,
+  },
+  {
+    title: "Arquiteto de Software",
+    icon: backend,
+  },
+  {
+    title: "Desenvolvedor de Software",
+    icon: mobile,
+  },
+  {
+    title: "Head de Tecnologia",
+    icon: creator,
+  },
+];
+
+const technologies: Technology[] = [
+  {
+    name: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    icon: css,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
+  },
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
+  {
+    name: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+  },
+  {
+    name: "Material UI",
+    icon: mui,
+  },
+  {
+    name: "git",
+    icon: git,
+  },
+  {
+    name: "figma",
+    icon: figma,
+  },
+  {
+    name: "docker",
+    icon: docker,
+  },
+];
+
+const experiences: Experience[] = [
+  {
+    title: "Desenvolvedor Web/IoT",
+    company_name: "Pegasus Pro",
+    icon: Pegasus,
+    iconBg: "#E6DEDD",
+    date: "Setembro 2017 - Junho 2020",
+    points: [
+      "Desenvolvimento e manutenção de aplicações web utilizando HTML, CSS, JavaScript e outras tecnologias relacionadas.",
+      "Desenvolvimento e manutenção do software do dinamômetro Pegasus Pro em linguagem C junto ao micro-controlador ESP-32 da Espressif.",
+      "Implementando design responsivo e garantindo compatibilidade entre navegadores.",
+    ],
+  },
+  {
+    title: "Engenheiro de Software/Head de Tecnologia",
+    company_name: "IIItek Technology",
+    icon: iiitek,
+    iconBg: "#383E56",
+    date: "Junho 2020 - Março 2024",
+    points: [
+      "Desenvolvimento e manutenção de aplicações web usando React.js, Next.js e outras tecnologias relacionadas.",
+      "Colaborar com equipes multifuncionais, incluindo designers, gerentes de produto e outros desenvolvedores para criar produtos de alta qualidade.",
+      "Gestão das equipes de desenvolvimento.",
+      "Participar de revisões de código e fornecer feedback construtivo a outros desenvolvedores.",
+    ],
+  },
+  {
+    title: "Coordenador de Desenvolvimento",
+    company_name: "Grupo SIFAT",
+    icon: sifat,
+    iconBg: "#383E56",
+    date: "Março 2024 - Agosto 2024",
+    points: [
+      "Desenvolvimento e manutenção de aplicações web usando React.js no frontend e Java no backend.",
+      "Colaborar com equipes multifuncionais, incluindo designers, gerentes de produto e outros desenvolvedores, para criar produtos de alta qualidade.",
+      "Gestão e coordenação das equipes de desenvolvimento, garantindo a entrega dentro dos prazos e conforme os padrões de qualidade.",
+      "Participar de revisões de código e fornecer feedback construtivo a outros desenvolvedores.",
+      "Supervisão e otimização de soluções de automação comercial, incluindo sistemas de PDV, ERP e CRM.",
+      "Identificação e implementação de melhorias em processos e sistemas para aumentar a eficiência e escalabilidade.",
+      "Treinamento e mentoria de desenvolvedores, promovendo a adoção de melhores práticas e o desenvolvimento contínuo da equipe.",
+    ],
+  },
+];
+
+const projects: Project[] = [
+  {
+    name: "WayMenu",
+    description:
+      "Cardápio digital para restaurantes, desenvolvido com React.js, Material UI entre outros.",
+    tags: [
+      {
+        name: "JavaScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Material-UI",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu,
+    source_code_link: "https://sifat.com.br/waymenu/",
+  },
+  {
+    name: "Backend Bun e Clean-Arch",
+    description:
+      "Backend construido com a nova tecnologias Bun e utilizando arquitetura limpa e Prisma.",
+    tags: [
+      {
+        name: "Bun",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Elysia",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Prisma ORM",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bun,
+    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
+  },
+  {
+    name: "Software Dinamômetro Pegasus Pro",
+    description:
+      "Software do dinamômetro inercial Pegasus Pro, desenvolvido com HTML, CSS, JavaScript, linguagem C e Micro-controladora ESP32.",
+    tags: [
+      {
+        name: "HTML",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "C",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: dinamometro,
+    source_code_link: "https://home.pegasuspro.com.br/",
+  },
+];
+
+export { services, technologies, experiences, projects };
