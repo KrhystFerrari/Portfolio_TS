@@ -8,6 +8,7 @@ import Works from "./Works";
 import Contact from "./Contact";
 import CanvasLoader from "./CanvasLoader";
 import LanguageSelector from "./LanguageSelector";
+import BackToTop from "./BackToTop";
 
 export {
   Hero,
@@ -19,6 +20,7 @@ export {
   Contact,
   CanvasLoader,
   LanguageSelector,
+  BackToTop,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,

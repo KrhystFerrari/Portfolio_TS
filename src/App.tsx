@@ -1,7 +1,17 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import {
+  About,
+  Contact,
+  Experience,
+  Hero,
+  Navbar,
+  Tech,
+  Works,
+  StarsCanvas,
+  BackToTop,
+} from "./components";
 import Footer from "./components/Footer";
 import { LanguageProvider } from "./context/LanguageContext";
 
@@ -23,6 +33,7 @@ const App: React.FC = () => {
             <StarsCanvas />
           </div>
           <Footer />
+          <BackToTop />
         </div>
       </BrowserRouter>
     </LanguageProvider>

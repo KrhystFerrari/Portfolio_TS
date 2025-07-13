@@ -84,6 +84,7 @@ export interface Translations {
   backToTop: {
     title: string;
   };
+  };
 }
 
 export const translations: Record<string, Translations> = {
@@ -181,6 +182,7 @@ export const translations: Record<string, Translations> = {
     backToTop: {
       title: "Voltar ao topo",
     },
+    },
   },
   en: {
     nav: {
@@ -276,6 +278,7 @@ export const translations: Record<string, Translations> = {
     backToTop: {
       title: "Back to top",
     },
+    },
   },
   es: {
     nav: {
@@ -370,6 +373,7 @@ export const translations: Record<string, Translations> = {
     },
     backToTop: {
       title: "Volver arriba",
+    },
     },
   },
 };
