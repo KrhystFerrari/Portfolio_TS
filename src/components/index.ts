@@ -9,6 +9,8 @@ import Contact from "./Contact";
 import CanvasLoader from "./CanvasLoader";
 import LanguageSelector from "./LanguageSelector";
 import BackToTop from "./BackToTop";
+import Model3DFallback from "./Model3DFallback";
+import CanvasErrorBoundary from "./CanvasErrorBoundary";
 
 export {
   Hero,
@@ -21,6 +23,8 @@ export {
   CanvasLoader,
   LanguageSelector,
   BackToTop,
+  Model3DFallback,
+  CanvasErrorBoundary,
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,

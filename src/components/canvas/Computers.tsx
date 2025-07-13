@@ -3,6 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../CanvasLoader";
+import Model3DFallback from "../Model3DFallback";
+import CanvasErrorBoundary from "../CanvasErrorBoundary";
+import { useIsMobile } from "../../hooks";
 import type { ComputersProps } from "./types";
 
 const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
@@ -36,6 +39,7 @@ const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
 
 const ComputersCanvas: React.FC = () => {
   const [isMobile, setIsMobile] = useState<boolean>(false);
+  const isDeviceMobile = useIsMobile(900);
 
   useEffect(() => {
     // Add a listener for changes to the screen size
@@ -58,21 +62,32 @@ const ComputersCanvas: React.FC = () => {
     };
   }, []);
 
-  return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-    >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+  // Usar fallback em dispositivos móveis
+  if (isDeviceMobile) {
+    return <Model3DFallback type="hero" className="absolute inset-0" />;
+  }
 
-      <Preload all />
-    </Canvas>
+  return (
+    <CanvasErrorBoundary fallbackType="hero" className="absolute inset-0">
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+      >
+        <Suspense fallback={<CanvasLoader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
+
+        <Preload all />
+      </Canvas>
+    </CanvasErrorBoundary>
   );
 };
 

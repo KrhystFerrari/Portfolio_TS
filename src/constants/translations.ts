@@ -84,6 +84,11 @@ export interface Translations {
   backToTop: {
     title: string;
   };
+
+  // 3D Model fallback
+  model3d: {
+    fallbackMessage: string;
+  };
 }
 
 export const translations: Record<string, Translations> = {
@@ -181,6 +186,9 @@ export const translations: Record<string, Translations> = {
     backToTop: {
       title: "Voltar ao topo",
     },
+    model3d: {
+      fallbackMessage: "Desculpe, não foi possível carregar o modelo 3D neste dispositivo.",
+    },
   },
   en: {
     nav: {
@@ -276,6 +284,9 @@ export const translations: Record<string, Translations> = {
     backToTop: {
       title: "Back to top",
     },
+    model3d: {
+      fallbackMessage: "Sorry, the 3D model could not be loaded on this device.",
+    },
   },
   es: {
     nav: {
@@ -370,6 +381,9 @@ export const translations: Record<string, Translations> = {
     },
     backToTop: {
       title: "Volver arriba",
+    },
+    model3d: {
+      fallbackMessage: "Lo sentimos, no se pudo cargar el modelo 3D en este dispositivo.",
     },
   },
 };

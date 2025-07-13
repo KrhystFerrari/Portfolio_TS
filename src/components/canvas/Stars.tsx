@@ -4,6 +4,9 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 // @ts-expect-error - maath library doesn't have TypeScript definitions
 import * as random from "maath/random/dist/maath-random.esm";
 
+import Model3DFallback from "../Model3DFallback";
+import CanvasErrorBoundary from "../CanvasErrorBoundary";
+import { useIsMobile } from "../../hooks";
 import type { StarsProps } from "./types";
 
 const Stars: React.FC<StarsProps> = (props) => {
@@ -35,15 +38,24 @@ const Stars: React.FC<StarsProps> = (props) => {
 };
 
 const StarsCanvas: React.FC = () => {
+  const isMobile = useIsMobile(768);
+
+  // Usar fallback em dispositivos móveis
+  if (isMobile) {
+    return <Model3DFallback type="stars" className="w-full h-auto absolute inset-0 z-[-1]" />;
+  }
+
   return (
     <div className="w-full h-auto absolute inset-0 z-[-1]">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
+      <CanvasErrorBoundary fallbackType="stars" className="w-full h-auto absolute inset-0 z-[-1]">
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
 
-        <Preload all />
-      </Canvas>
+          <Preload all />
+        </Canvas>
+      </CanvasErrorBoundary>
     </div>
   );
 };
