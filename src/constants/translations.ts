@@ -99,13 +99,13 @@ export const translations: Record<string, Translations> = {
       contact: "Contato",
     },
     hero: {
-      subtitle: "Desenvolvedor Full Stack",
+      subtitle: "Desenvolvedor Front-end",
     },
     about: {
       intro: "Intro",
       title: "Sobre mim...",
       description:
-        'Olá, me chamo Krhystofferson Ferrari, tenho 31 anos e sou Desenvolvedor Full Stack. Nascido em 1992 na cidade de São José do Rio Preto - SP, tive uma infância humilde, mas sempre com acesso a princípios e educação. Aos 11 anos, ganhei meu primeiro computador e, desde então, me apaixonei pela tecnologia, tornando-me o "menino que ajeitava os PCs" da vizinhança. Trabalho desde os 12 anos e já atuei em diversas áreas, desde auxiliar de funilaria até metalúrgico. Aos 18 anos, tive minha primeira experiência com programação, atuando como Operador de Dobradeira CNC especializado. Estudo programação desde 2015, com algumas pausas ao longo do caminho. Iniciei minha transição de carreira para tecnologia em 2017 e possuo experiência em TypeScript, JavaScript, React.js, Node.js e Next.js. Aprendo rápido e colaboro diretamente com os clientes para criar soluções eficientes, escaláveis e fáceis de usar, que resolvem problemas reais. Desde 2020, lidero equipes e atualmente sou Head de Tecnologia e Coordenador de Desenvolvimento. Vamos trabalhar juntos para dar vida às suas ideias!',
+        'Olá, me chamo Krhystofferson Ferrari, tenho 31 anos e sou Desenvolvedor Front-end. Nascido em 1992 na cidade de São José do Rio Preto - SP, tive uma infância humilde, mas sempre com acesso a princípios e educação. Aos 11 anos, ganhei meu primeiro computador e, desde então, me apaixonei pela tecnologia, tornando-me o "menino que ajeitava os PCs" da vizinhança. Trabalho desde os 12 anos e já atuei em diversas áreas, desde auxiliar de funilaria até metalúrgico. Aos 18 anos, tive minha primeira experiência com programação, atuando como Operador de Dobradeira CNC especializado. Estudo programação desde 2015, com algumas pausas ao longo do caminho. Iniciei minha transição de carreira para tecnologia em 2017 e possuo experiência em TypeScript, JavaScript, React.js, Node.js e Next.js. Aprendo rápido e colaboro diretamente com os clientes para criar soluções eficientes, escaláveis e fáceis de usar, que resolvem problemas reais. Desde 2020, lidero equipes e atualmente sou Head de Tecnologia e Coordenador de Desenvolvimento. Vamos trabalhar juntos para dar vida às suas ideias!',
       services: {
         softwareEngineer: "Engenheiro de Software",
         softwareArchitect: "Arquiteto de Software",
@@ -197,13 +197,13 @@ export const translations: Record<string, Translations> = {
       contact: "Contact",
     },
     hero: {
-      subtitle: "Full Stack Developer",
+      subtitle: "Front-end Developer",
     },
     about: {
       intro: "Introduction",
       title: "About me...",
       description:
-        "Hello, my name is Krhystofferson Ferrari, I'm 31 years old and I'm a Full Stack Developer. Born in 1992 in the city of São José do Rio Preto - SP, Brazil, I had a humble childhood, but always with access to principles and education. At age 11, I got my first computer and since then, I fell in love with technology, becoming the 'kid who fixed PCs' in the neighborhood. I've been working since I was 12 and have worked in various areas, from bodywork assistant to metallurgist. At 18, I had my first experience with programming, working as a specialized CNC Bending Machine Operator. I've been studying programming since 2015, with some breaks along the way. I started my career transition to technology in 2017 and have experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I learn fast and collaborate directly with clients to create efficient, scalable, and user-friendly solutions that solve real problems. Since 2020, I've been leading teams and currently serve as Head of Technology and Development Coordinator. Let's work together to bring your ideas to life!",
+        "Hello, my name is Krhystofferson Ferrari, I'm 31 years old and I'm a Front-end Developer. Born in 1992 in the city of São José do Rio Preto - SP, Brazil, I had a humble childhood, but always with access to principles and education. At age 11, I got my first computer and since then, I fell in love with technology, becoming the 'kid who fixed PCs' in the neighborhood. I've been working since I was 12 and have worked in various areas, from bodywork assistant to metallurgist. At 18, I had my first experience with programming, working as a specialized CNC Bending Machine Operator. I've been studying programming since 2015, with some breaks along the way. I started my career transition to technology in 2017 and have experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I learn fast and collaborate directly with clients to create efficient, scalable, and user-friendly solutions that solve real problems. Since 2020, I've been leading teams and currently serve as Head of Technology and Development Coordinator. Let's work together to bring your ideas to life!",
       services: {
         softwareEngineer: "Software Engineer",
         softwareArchitect: "Software Architect",
@@ -295,13 +295,13 @@ export const translations: Record<string, Translations> = {
       contact: "Contacto",
     },
     hero: {
-      subtitle: "Desarrollador Full Stack",
+      subtitle: "Desarrollador Front-end",
     },
     about: {
       intro: "Introducción",
       title: "Acerca de mí...",
       description:
-        "Hola, mi nombre es Krhystofferson Ferrari, tengo 31 años y soy Desarrollador Full Stack. Nacido en 1992 en la ciudad de São José do Rio Preto - SP, Brasil, tuve una infancia humilde, pero siempre con acceso a principios y educación. A los 11 años, obtuve mi primera computadora y desde entonces, me enamoré de la tecnología, convirtiéndome en el 'chico que arreglaba PCs' del barrio. He estado trabajando desde los 12 años y he trabajado en varias áreas, desde asistente de carrocería hasta metalúrgico. A los 18, tuve mi primera experiencia con programación, trabajando como Operador de Máquina Dobladora CNC especializado. He estado estudiando programación desde 2015, con algunos descansos en el camino. Comencé mi transición profesional a la tecnología en 2017 y tengo experiencia en TypeScript, JavaScript, React.js, Node.js y Next.js. Aprendo rápido y colaboro directamente con los clientes para crear soluciones eficientes, escalables y fáciles de usar que resuelven problemas reales. Desde 2020, he estado liderando equipos y actualmente me desempeño como Jefe de Tecnología y Coordinador de Desarrollo. ¡Trabajemos juntos para dar vida a tus ideas!",
+        "Hola, mi nombre es Krhystofferson Ferrari, tengo 31 años y soy Desarrollador Front-end. Nacido en 1992 en la ciudad de São José do Rio Preto - SP, Brasil, tuve una infancia humilde, pero siempre con acceso a principios y educación. A los 11 años, obtuve mi primera computadora y desde entonces, me enamoré de la tecnología, convirtiéndome en el 'chico que arreglaba PCs' del barrio. He estado trabajando desde los 12 años y he trabajado en varias áreas, desde asistente de carrocería hasta metalúrgico. A los 18, tuve mi primera experiencia con programación, trabajando como Operador de Máquina Dobladora CNC especializado. He estado estudiando programación desde 2015, con algunos descansos en el camino. Comencé mi transición profesional a la tecnología en 2017 y tengo experiencia en TypeScript, JavaScript, React.js, Node.js y Next.js. Aprendo rápido y colaboro directamente con los clientes para crear soluciones eficientes, escalables y fáciles de usar que resuelven problemas reales. Desde 2020, he estado liderando equipos y actualmente me desempeño como Jefe de Tecnología y Coordinador de Desarrollo. ¡Trabajemos juntos para dar vida a tus ideas!",
       services: {
         softwareEngineer: "Ingeniero de Software",
         softwareArchitect: "Arquitecto de Software",
