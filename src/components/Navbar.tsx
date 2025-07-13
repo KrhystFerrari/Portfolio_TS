@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 ${
+      className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 transition-all duration-300 ease-in-out ${
         scrolled ? "bg-primary" : "bg-transparent"
       }`}
     >
@@ -46,10 +46,7 @@ const Navbar: React.FC = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            Krhyst Ferrari&nbsp;
-          </p>
+          <img src={logo} alt="logo" className="w-[120px] h-w-[120px] object-contain" />
         </Link>
 
         <div className="flex items-center gap-4">
