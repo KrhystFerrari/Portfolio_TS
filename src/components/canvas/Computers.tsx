@@ -10,16 +10,20 @@ const Computers: React.FC<ComputersProps> = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      {/* Luz ambiente mais clara */}
+      <hemisphereLight intensity={1.5} groundColor="#ffffff" />
+      {/* SpotLight mais intensa e mais "branca" */}
       <spotLight
         position={[-20, 50, 10]}
-        angle={0.12}
+        angle={0.28}
         penumbra={1}
-        intensity={1}
+        intensity={7}
+        color="#ffffff"
         castShadow
-        shadow-mapSize={1024}
+        shadow-mapSize={2048}
       />
-      <pointLight intensity={1} />
+      {/* PointLight mais intensa */}
+      <pointLight intensity={8} color="#ffffff" position={[0, 10, 0]} />
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.33 : 0.75}

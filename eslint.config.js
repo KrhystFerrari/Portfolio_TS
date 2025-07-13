@@ -7,7 +7,35 @@ import prettier from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
 
 export default tseslint.config([
-  { ignores: ["dist"] },
+  {
+    ignores: [
+      "dist",
+      "build",
+      ".next",
+      "out",
+      "node_modules",
+      ".cache",
+      ".parcel-cache",
+      ".vite",
+      "*.config.js",
+      "*.config.ts",
+      "*.config.mjs",
+      "*.tsbuildinfo",
+      "coverage",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.jpeg",
+      "**/*.gif",
+      "**/*.svg",
+      "**/*.ico",
+      "**/*.webp",
+      "**/*.gltf",
+      "**/*.bin",
+      "package-lock.json",
+      "yarn.lock",
+      "pnpm-lock.yaml",
+    ],
+  },
   {
     files: ["**/*.{ts,tsx}"],
     extends: [js.configs.recommended, ...tseslint.configs.recommended, prettierConfig],
