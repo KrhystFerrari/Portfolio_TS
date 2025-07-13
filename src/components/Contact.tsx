@@ -6,6 +6,8 @@ import { styles } from "../styles/index";
 import { EarthCanvas } from "./canvas/index";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { useLanguage } from "../hooks/useLanguage";
+import { translations } from "../constants/translations";
 import type { ContactForm, ContactFormEvent, ContactInputEvent } from "../types";
 
 const Contact: React.FC = () => {
@@ -17,6 +19,8 @@ const Contact: React.FC = () => {
   });
 
   const [loading, setLoading] = useState<boolean>(false);
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const handleChange = (e: ContactInputEvent): void => {
     const { target } = e;
@@ -48,7 +52,7 @@ const Contact: React.FC = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Obrigado. Entrarei em contato em breve.");
+          alert(t.contact.alerts.success);
 
           setForm({
             name: "",
@@ -60,7 +64,7 @@ const Contact: React.FC = () => {
           setLoading(false);
           console.error(error);
 
-          alert("Ah, algo deu errado. Por favor, tente novamente.");
+          alert(t.contact.alerts.error);
         }
       );
   };
@@ -71,40 +75,40 @@ const Contact: React.FC = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
-        <p className={styles.sectionSubText}>Mande uma mensagem</p>
-        <h3 className={styles.sectionHeadText}>Contato:</h3>
+        <p className={styles.sectionSubText}>{t.contact.subtitle}</p>
+        <h3 className={styles.sectionHeadText}>{t.contact.title}</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Nome</span>
+            <span className="text-white font-medium mb-4">{t.contact.form.name}</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Digite seu nome."
+              placeholder={t.contact.form.namePlaceholder}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Email</span>
+            <span className="text-white font-medium mb-4">{t.contact.form.email}</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Digite seu e-mail."
+              placeholder={t.contact.form.emailPlaceholder}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Mensagem</span>
+            <span className="text-white font-medium mb-4">{t.contact.form.message}</span>
             <textarea
               rows={7}
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Deixe sua mensagem."
+              placeholder={t.contact.form.messagePlaceholder}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
           </label>
@@ -113,7 +117,7 @@ const Contact: React.FC = () => {
             type="submit"
             className="bg-purple-700 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
-            {loading ? "Enviando..." : "Enviar"}
+            {loading ? t.contact.form.sendingButton : t.contact.form.sendButton}
           </button>
         </form>
       </motion.div>

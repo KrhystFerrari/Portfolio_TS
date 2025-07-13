@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles/index";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { getProjects } from "../constants/indexMultiLang";
+import { useLanguage } from "../hooks/useLanguage";
+import { translations } from "../constants/translations";
 import { fadeIn, textVariant } from "../utils/motion";
 import type { Project, TiltOptions } from "../types";
 
@@ -74,11 +76,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 };
 
 const Works: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  const projects = getProjects(language);
+
+  const getProjectsDescription = () => {
+    if (language === "pt") {
+      return "Os projetos a seguir mostram minhas habilidades e experiência por meio de exemplos do mundo real do meu trabalho. Cada projeto é brevemente descrito com links para repositórios de código e demonstrações ao vivo. Isso reflete minha capacidade de resolver problemas complexos, trabalhar com diferentes tecnologias e gerenciar projetos de forma eficaz.";
+    } else if (language === "en") {
+      return "The following projects showcase my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.";
+    } else {
+      return "Los siguientes proyectos muestran mis habilidades y experiencia a través de ejemplos del mundo real de mi trabajo. Cada proyecto se describe brevemente con enlaces a repositorios de código y demostraciones en vivo. Refleja mi capacidad para resolver problemas complejos, trabajar con diferentes tecnologías y gestionar proyectos de manera efectiva.";
+    }
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>Meu trabalho.</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projetos:</h2>
+        <p className={`${styles.sectionSubText} `}>{t.projects.subtitle}</p>
+        <h2 className={`${styles.sectionHeadText}`}>{t.projects.title}:</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -86,10 +102,7 @@ const Works: React.FC = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Os projetos a seguir mostram minhas habilidades e experiência por meio de exemplos do
-          mundo real do meu trabalho. Cada projeto é brevemente descrito com links para repositórios
-          de código e demonstrações ao vivo. Isso reflete minha capacidade de resolver problemas
-          complexos, trabalhar com diferentes tecnologias e gerenciar projetos de forma eficaz.
+          {getProjectsDescription()}
         </motion.p>
       </div>
 

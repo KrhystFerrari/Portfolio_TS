@@ -2,14 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles/index";
-import { navLinks } from "../constants";
+import { getNavLinks } from "../constants/indexMultiLang";
 import { logo, menu, close } from "../assets";
+import { useLanguage } from "../hooks/useLanguage";
+import LanguageSelector from "./LanguageSelector";
 import type { NavLink } from "../types";
 
 const Navbar: React.FC = () => {
   const [active, setActive] = useState<string>("");
   const [toggle, setToggle] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const { language } = useLanguage();
+
+  const navLinks = getNavLinks(language);
 
   useEffect(() => {
     const handleScroll = (): void => {
@@ -47,21 +52,27 @@ const Navbar: React.FC = () => {
           </p>
         </Link>
 
-        <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((nav: NavLink) => (
-            <li key={nav.id}>
-              <a
-                href={`#${nav.id}`}
-                className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
-                onClick={() => setActive(nav.title)}
-              >
-                {nav.title}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-4">
+          <ul className="list-none hidden sm:flex flex-row gap-10">
+            {navLinks.map((nav: NavLink) => (
+              <li key={nav.id}>
+                <a
+                  href={`#${nav.id}`}
+                  className={`${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  } hover:text-white text-[18px] font-medium cursor-pointer`}
+                  onClick={() => setActive(nav.title)}
+                >
+                  {nav.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <div className="hidden sm:block">
+            <LanguageSelector />
+          </div>
+        </div>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <button
@@ -99,6 +110,9 @@ const Navbar: React.FC = () => {
                   </a>
                 </li>
               ))}
+              <li className="mt-4">
+                <LanguageSelector />
+              </li>
             </ul>
           </div>
         </div>

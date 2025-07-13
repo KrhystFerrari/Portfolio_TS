@@ -3,8 +3,13 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles/index";
 import { ComputersCanvas } from "./canvas/index";
+import { useLanguage } from "../hooks/useLanguage";
+import { translations } from "../constants/translations";
 
 const Hero: React.FC = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <div
@@ -20,7 +25,7 @@ const Hero: React.FC = () => {
             <span className="text-[#915EFF]">Krhyst Ferrari</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Desenvolvedor Full Stack <br className="sm:block hidden" />
+            {t.hero.subtitle} <br className="sm:block hidden" />
           </p>
         </div>
       </div>

@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles/index";
-import { experiences } from "../constants";
+import { getExperiences } from "../constants/indexMultiLang";
+import { useLanguage } from "../hooks/useLanguage";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import type { ExperienceCardProps, Experience } from "../types";
@@ -52,11 +53,38 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({ experience }) => {
 };
 
 const ExperienceSection: React.FC = () => {
+  const { language } = useLanguage();
+  const experiences = getExperiences(language);
+
+  const getCompaniesSubtitle = () => {
+    let subtitle;
+    if (language === "pt") {
+      subtitle = "Empresas onde atuei";
+    } else if (language === "en") {
+      subtitle = "Companies I worked for";
+    } else {
+      subtitle = "Empresas donde trabajé";
+    }
+    return subtitle;
+  };
+
+  const getExperienceTitle = () => {
+    let title;
+    if (language === "pt") {
+      title = "Experiências Profissionais:";
+    } else if (language === "en") {
+      title = "Work Experience:";
+    } else {
+      title = "Experiencia Profesional:";
+    }
+    return title;
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>Empresas onde atuei</p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>Experiências Profissionais:</h2>
+        <p className={`${styles.sectionSubText} text-center`}>{getCompaniesSubtitle()}</p>
+        <h2 className={`${styles.sectionHeadText} text-center`}>{getExperienceTitle()}</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
