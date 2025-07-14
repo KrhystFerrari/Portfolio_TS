@@ -46,7 +46,7 @@ const About: React.FC = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] whitespace-pre-line"
       >
         {t.about.description}
       </motion.p>

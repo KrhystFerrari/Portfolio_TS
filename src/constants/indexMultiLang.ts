@@ -18,6 +18,7 @@ import {
   Pegasus,
   iiitek,
   sifat,
+  nous,
   dinamometro,
   waymenu,
   bun,
@@ -145,7 +146,7 @@ export const getExperiences = (language: Language): Experience[] => [
     title: translations[language].experience.experiences.sifat.title,
     company_name: "Grupo SIFAT",
     icon: sifat,
-    iconBg: "#383E56",
+    iconBg: "#0e4c89",
     // Extracted ternary operation into an independent statement
     date: (() => {
       if (language === "pt") return "Março 2024 - Agosto 2024";
@@ -154,9 +155,165 @@ export const getExperiences = (language: Language): Experience[] => [
     })(),
     points: translations[language].experience.experiences.sifat.points,
   },
+  {
+    title: translations[language].experience.experiences.nous.title,
+    company_name: "Noûs",
+    icon: nous,
+    iconBg: "#000000",
+    date: (() => {
+      if (language === "pt") return "Setembro 2024 - Presente";
+      if (language === "en") return "September 2024 - Present";
+      return "Septiembre 2024 - Presente";
+    })(),
+    points: translations[language].experience.experiences.nous.points,
+  },
 ];
 
 export const getProjects = (language: Language): Project[] => [
+  {
+    name: (() => {
+      if (language === "pt") return "Marketplace E-commerce";
+      if (language === "en") return "E-commerce Marketplace";
+      return "Marketplace E-comercio";
+    })(),
+    description: translations[language].projects.items.marketplace.description,
+    tags: [
+      {
+        name: "TypeScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tRPC",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Payload CMS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Portal Caravanas - SBT";
+      if (language === "en") return "Caravanas Portal - SBT";
+      return "Portal Caravanas - SBT";
+    })(),
+    description: translations[language].projects.items.sbtCaravanas.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Next.js",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Site GSS - Grupo Silvio Santos";
+      if (language === "en") return "GSS Website - Grupo Silvio Santos";
+      return "Sitio GSS - Grupo Silvio Santos";
+    })(),
+    description: translations[language].projects.items.gssWebsite.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "AgriTech 4.0 - IIItek";
+      if (language === "en") return "AgriTech 4.0 - IIItek";
+      return "AgroTech 4.0 - IIItek";
+    })(),
+    description: translations[language].projects.items.agritech.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "IoT",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Data Analytics",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Site Institucional IIItek";
+      if (language === "en") return "IIItek Institutional Website";
+      return "Sitio Institucional IIItek";
+    })(),
+    description: translations[language].projects.items.iiitekWebsite.description,
+    tags: [
+      {
+        name: "Next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "https://iiitek.com.br",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Site Grupo A3";
+      if (language === "en") return "Grupo A3 Website";
+      return "Sitio Grupo A3";
+    })(),
+    description: translations[language].projects.items.grupoA3.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Material-UI",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
   {
     name: "WayMenu",
     description: translations[language].projects.items.waymenu.description,

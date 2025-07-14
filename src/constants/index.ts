@@ -18,6 +18,7 @@ import {
   Pegasus,
   iiitek,
   sifat,
+  nous,
   dinamometro,
   waymenu,
   bun,
@@ -157,9 +158,149 @@ const experiences: Experience[] = [
       "Treinamento e mentoria de desenvolvedores, promovendo a adoção de melhores práticas e o desenvolvimento contínuo da equipe.",
     ],
   },
+  {
+    title: "Desenvolvedor Front-end Sênior",
+    company_name: "Noûs",
+    icon: nous,
+    iconBg: "#000000",
+    date: "Setembro 2024 - Presente",
+    points: [
+      "Desenvolvimento e manutenção de aplicações web modernas utilizando React.js, TypeScript, Next.js e outras tecnologias de ponta.",
+      "Prestação de consultoria técnica especializada para o SBT Lab, contribuindo para projetos inovadores na área de mídia e tecnologia.",
+      "Colaboração com equipes multidisciplinares para criar soluções escaláveis e de alta performance.",
+      "Implementação de melhores práticas de desenvolvimento, incluindo clean code, testes automatizados e arquitetura de software.",
+      "Mentoria e orientação técnica para desenvolvedores juniores e plenos da equipe.",
+    ],
+  },
 ];
 
 const projects: Project[] = [
+  {
+    name: "Marketplace E-commerce",
+    description:
+      "Marketplace completo desenvolvido com tRPC, TypeScript, Payload CMS, garantindo type-safety e performance otimizada.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tRPC",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Payload CMS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: "Portal Caravanas - SBT",
+    description:
+      "Portal oficial do programa Caravanas do SBT, desenvolvido com tecnologias modernas para alta performance e experiência do usuário.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Next.js",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: "Site GSS - Grupo Silvio Santos",
+    description:
+      "Website institucional do Grupo Silvio Santos, focado em apresentar a empresa e seus valores de forma moderna e responsiva.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: "AgriTech 4.0 - IIItek",
+    description:
+      "Plataforma de gerenciamento de fazendas e agricultura 4.0, integrando IoT, análise de dados e automação para otimização agrícola.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "IoT",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Data Analytics",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
+  {
+    name: "Site Institucional IIItek",
+    description:
+      "Website institucional da IIItek Technology, apresentando soluções tecnológicas inovadoras com design moderno e responsivo.",
+    tags: [
+      {
+        name: "Next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "https://iiitek.com.br",
+  },
+  {
+    name: "Site Grupo A3",
+    description:
+      "Portal institucional do Grupo A3, desenvolvido com foco em performance e experiência do usuário, apresentando os serviços da empresa.",
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Material-UI",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu, // Você pode adicionar uma imagem específica depois
+    source_code_link: "#",
+  },
   {
     name: "WayMenu",
     description:

@@ -28,6 +28,10 @@ export interface Translations {
   experience: {
     title: string;
     experiences: {
+      nous: {
+        title: string;
+        points: string[];
+      };
       pegasus: {
         title: string;
         points: string[];
@@ -48,6 +52,24 @@ export interface Translations {
     title: string;
     subtitle: string;
     items: {
+      marketplace: {
+        description: string;
+      };
+      sbtCaravanas: {
+        description: string;
+      };
+      gssWebsite: {
+        description: string;
+      };
+      agritech: {
+        description: string;
+      };
+      iiitekWebsite: {
+        description: string;
+      };
+      grupoA3: {
+        description: string;
+      };
       waymenu: {
         description: string;
       };
@@ -105,7 +127,7 @@ export const translations: Record<string, Translations> = {
       intro: "Intro",
       title: "Sobre mim...",
       description:
-        'Olá, me chamo Krhystofferson Ferrari, tenho 31 anos e sou Desenvolvedor Front-end. Nascido em 1992 na cidade de São José do Rio Preto - SP, tive uma infância humilde, mas sempre com acesso a princípios e educação. Aos 11 anos, ganhei meu primeiro computador e, desde então, me apaixonei pela tecnologia, tornando-me o "menino que ajeitava os PCs" da vizinhança. Trabalho desde os 12 anos e já atuei em diversas áreas, desde auxiliar de funilaria até metalúrgico. Aos 18 anos, tive minha primeira experiência com programação, atuando como Operador de Dobradeira CNC especializado. Estudo programação desde 2015, com algumas pausas ao longo do caminho. Iniciei minha transição de carreira para tecnologia em 2017 e possuo experiência em TypeScript, JavaScript, React.js, Node.js e Next.js. Aprendo rápido e colaboro diretamente com os clientes para criar soluções eficientes, escaláveis e fáceis de usar, que resolvem problemas reais. Desde 2020, lidero equipes e atualmente sou Head de Tecnologia e Coordenador de Desenvolvimento. Vamos trabalhar juntos para dar vida às suas ideias!',
+        'Olá! Sou Krhystofferson Ferrari, tenho 33 anos e atuo como Desenvolvedor Front-end e Engenheiro de Software.\nNascido em 1992, em São José do Rio Preto - SP, cresci em um lar simples, mas cercado de princípios e incentivo à educação. Ganhei meu primeiro computador aos 11 anos e, desde então, nunca mais larguei a tecnologia — virei o famoso "menino que conserta os PCs" da vizinhança.\n\nAos 14 anos, tive meu primeiro contato com programação ao criar automações para jogos usando a linguagem Lua. Desde cedo, percebi o poder de transformar ideias em soluções através do código.\n\nSou autodidata e tenho experiência sólida em TypeScript, JavaScript, React.js, Node.js e Next.js. Gosto de estar próximo dos clientes para entender necessidades reais e criar soluções eficientes, escaláveis e fáceis de usar.\nJá liderei equipes, trabalhei com sistemas embarcados (IoT) e também atuei como desenvolvedor fullstack, sempre buscando uma visão completa das soluções que construo. Hoje, atuo como Desenvolvedor Front-end Sênior e Engenheiro de Software na Noûs, prestando consultoria para o SBT Lab.\n\nVamos conversar? Transformar ideias em projetos reais é meu trabalho!',
       services: {
         softwareEngineer: "Engenheiro de Software",
         softwareArchitect: "Arquiteto de Software",
@@ -116,6 +138,16 @@ export const translations: Record<string, Translations> = {
     experience: {
       title: "Experiência",
       experiences: {
+        nous: {
+          title: "Desenvolvedor Front-end Sênior",
+          points: [
+            "Desenvolvimento e manutenção de aplicações web modernas utilizando React.js, TypeScript, Next.js e outras tecnologias de ponta.",
+            "Prestação de consultoria técnica especializada para o SBT Lab, contribuindo para projetos inovadores na área de mídia e tecnologia.",
+            "Colaboração com equipes multidisciplinares para criar soluções escaláveis e de alta performance.",
+            "Implementação de melhores práticas de desenvolvimento, incluindo clean code, testes automatizados e arquitetura de software.",
+            "Mentoria e orientação técnica para desenvolvedores juniores e plenos da equipe.",
+          ],
+        },
         pegasus: {
           title: "Desenvolvedor Web/IoT",
           points: [
@@ -151,6 +183,30 @@ export const translations: Record<string, Translations> = {
       title: "Projetos",
       subtitle: "Meu trabalho",
       items: {
+        marketplace: {
+          description:
+            "Marketplace completo desenvolvido com tRPC, TypeScript, Payload CMS, garantindo type-safety e performance otimizada.",
+        },
+        sbtCaravanas: {
+          description:
+            "Portal oficial do programa Caravanas do SBT, desenvolvido com tecnologias modernas para alta performance e experiência do usuário.",
+        },
+        gssWebsite: {
+          description:
+            "Website institucional do Grupo Silvio Santos, focado em apresentar a empresa e seus valores de forma moderna e responsiva.",
+        },
+        agritech: {
+          description:
+            "Plataforma de gerenciamento de fazendas e agricultura 4.0, integrando IoT, análise de dados e automação para otimização agrícola.",
+        },
+        iiitekWebsite: {
+          description:
+            "Website institucional da IIItek Technology, apresentando soluções tecnológicas inovadoras com design moderno e responsivo.",
+        },
+        grupoA3: {
+          description:
+            "Portal institucional do Grupo A3, desenvolvido com foco em performance e experiência do usuário, apresentando os serviços da empresa.",
+        },
         waymenu: {
           description:
             "Cardápio digital para restaurantes, desenvolvido com React.js, Material UI entre outros.",
@@ -203,7 +259,7 @@ export const translations: Record<string, Translations> = {
       intro: "Introduction",
       title: "About me...",
       description:
-        "Hello, my name is Krhystofferson Ferrari, I'm 31 years old and I'm a Front-end Developer. Born in 1992 in the city of São José do Rio Preto - SP, Brazil, I had a humble childhood, but always with access to principles and education. At age 11, I got my first computer and since then, I fell in love with technology, becoming the 'kid who fixed PCs' in the neighborhood. I've been working since I was 12 and have worked in various areas, from bodywork assistant to metallurgist. At 18, I had my first experience with programming, working as a specialized CNC Bending Machine Operator. I've been studying programming since 2015, with some breaks along the way. I started my career transition to technology in 2017 and have experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I learn fast and collaborate directly with clients to create efficient, scalable, and user-friendly solutions that solve real problems. Since 2020, I've been leading teams and currently serve as Head of Technology and Development Coordinator. Let's work together to bring your ideas to life!",
+        "Hello! I'm Krhystofferson Ferrari, I'm 33 years old and I work as a Front-end Developer and Software Engineer.\nBorn in 1992, in São José do Rio Preto - SP, I grew up in a simple home, but surrounded by principles and encouragement for education. I got my first computer at age 11 and since then, I never let go of technology — I became the famous \"boy who fixes PCs\" in the neighborhood.\n\nAt age 14, I had my first contact with programming by creating automations for games using the Lua language. Early on, I realized the power of transforming ideas into solutions through code.\n\nI'm self-taught and have solid experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I like to be close to clients to understand real needs and create efficient, scalable, and user-friendly solutions.\nI've already led teams, worked with embedded systems (IoT) and also worked as a fullstack developer, always seeking a complete view of the solutions I build. Today, I work as a Senior Front-end Developer and Software Engineer at Noûs, providing consulting for SBT Lab.\n\nLet's talk? Transforming ideas into real projects is my job!",
       services: {
         softwareEngineer: "Software Engineer",
         softwareArchitect: "Software Architect",
@@ -214,6 +270,16 @@ export const translations: Record<string, Translations> = {
     experience: {
       title: "Experience",
       experiences: {
+        nous: {
+          title: "Senior Front-end Developer",
+          points: [
+            "Development and maintenance of modern web applications using React.js, TypeScript, Next.js, and other cutting-edge technologies.",
+            "Providing specialized technical consulting for SBT Lab, contributing to innovative projects in media and technology.",
+            "Collaboration with multidisciplinary teams to create scalable and high-performance solutions.",
+            "Implementation of development best practices, including clean code, automated testing, and software architecture.",
+            "Mentoring and technical guidance for junior and mid-level developers on the team.",
+          ],
+        },
         pegasus: {
           title: "Web/IoT Developer",
           points: [
@@ -249,6 +315,30 @@ export const translations: Record<string, Translations> = {
       title: "Projects",
       subtitle: "My work",
       items: {
+        marketplace: {
+          description:
+            "Complete marketplace developed with tRPC, TypeScript, Payload CMS, ensuring type-safety and optimized performance.",
+        },
+        sbtCaravanas: {
+          description:
+            "Official portal for SBT's Caravanas program, developed with modern technologies for high performance and user experience.",
+        },
+        gssWebsite: {
+          description:
+            "Institutional website for Grupo Silvio Santos, focused on presenting the company and its values in a modern and responsive way.",
+        },
+        agritech: {
+          description:
+            "Farm management and agriculture 4.0 platform, integrating IoT, data analytics, and automation for agricultural optimization.",
+        },
+        iiitekWebsite: {
+          description:
+            "Institutional website for IIItek Technology, showcasing innovative technological solutions with modern and responsive design.",
+        },
+        grupoA3: {
+          description:
+            "Institutional portal for Grupo A3, developed with focus on performance and user experience, presenting the company's services.",
+        },
         waymenu: {
           description:
             "Digital menu for restaurants, developed with React.js, Material UI, and other technologies.",
@@ -301,7 +391,7 @@ export const translations: Record<string, Translations> = {
       intro: "Introducción",
       title: "Acerca de mí...",
       description:
-        "Hola, mi nombre es Krhystofferson Ferrari, tengo 31 años y soy Desarrollador Front-end. Nacido en 1992 en la ciudad de São José do Rio Preto - SP, Brasil, tuve una infancia humilde, pero siempre con acceso a principios y educación. A los 11 años, obtuve mi primera computadora y desde entonces, me enamoré de la tecnología, convirtiéndome en el 'chico que arreglaba PCs' del barrio. He estado trabajando desde los 12 años y he trabajado en varias áreas, desde asistente de carrocería hasta metalúrgico. A los 18, tuve mi primera experiencia con programación, trabajando como Operador de Máquina Dobladora CNC especializado. He estado estudiando programación desde 2015, con algunos descansos en el camino. Comencé mi transición profesional a la tecnología en 2017 y tengo experiencia en TypeScript, JavaScript, React.js, Node.js y Next.js. Aprendo rápido y colaboro directamente con los clientes para crear soluciones eficientes, escalables y fáciles de usar que resuelven problemas reales. Desde 2020, he estado liderando equipos y actualmente me desempeño como Jefe de Tecnología y Coordinador de Desarrollo. ¡Trabajemos juntos para dar vida a tus ideas!",
+        '¡Hola! Soy Krhystofferson Ferrari, tengo 33 años y trabajo como Desarrollador Front-end e Ingeniero de Software.\nNacido en 1992, en São José do Rio Preto - SP, crecí en un hogar simple, pero rodeado de principios y estímulo a la educación. Conseguí mi primera computadora a los 11 años y desde entonces, nunca dejé la tecnología — me convertí en el famoso "niño que arregla las PCs" del vecindario.\n\nA los 14 años, tuve mi primer contacto con la programación al crear automatizaciones para juegos usando el lenguaje Lua. Desde temprano, me di cuenta del poder de transformar ideas en soluciones a través del código.\n\nSoy autodidacta y tengo experiencia sólida en TypeScript, JavaScript, React.js, Node.js y Next.js. Me gusta estar cerca de los clientes para entender las necesidades reales y crear soluciones eficientes, escalables y fáciles de usar.\nYa he liderado equipos, trabajé con sistemas embebidos (IoT) y también actué como desarrollador fullstack, siempre buscando una visión completa de las soluciones que construyo. Hoy, trabajo como Desarrollador Front-end Senior e Ingeniero de Software en Noûs, prestando consultoría para SBT Lab.\n\n¿Conversamos? ¡Transformar ideas en proyectos reales es mi trabajo!',
       services: {
         softwareEngineer: "Ingeniero de Software",
         softwareArchitect: "Arquitecto de Software",
@@ -312,6 +402,16 @@ export const translations: Record<string, Translations> = {
     experience: {
       title: "Experiencia",
       experiences: {
+        nous: {
+          title: "Desarrollador Front-end Senior",
+          points: [
+            "Desarrollo y mantenimiento de aplicaciones web modernas utilizando React.js, TypeScript, Next.js y otras tecnologías de vanguardia.",
+            "Prestación de consultoría técnica especializada para SBT Lab, contribuyendo a proyectos innovadores en el área de medios y tecnología.",
+            "Colaboración con equipos multidisciplinarios para crear soluciones escalables y de alto rendimiento.",
+            "Implementación de mejores prácticas de desarrollo, incluyendo código limpio, pruebas automatizadas y arquitectura de software.",
+            "Mentoría y orientación técnica para desarrolladores junior y semi-senior del equipo.",
+          ],
+        },
         pegasus: {
           title: "Desarrollador Web/IoT",
           points: [
@@ -323,10 +423,10 @@ export const translations: Record<string, Translations> = {
         iiitek: {
           title: "Ingeniero de Software/Jefe de Tecnología",
           points: [
-            "Desarrollo y mantenimiento de aplicaciones web usando React.js, Next.js y otras tecnologías relacionadas.",
+            "Desarrollo y mantenimiento de aplicaciones web usando React.js, Next.js y otras tecnologias relacionadas.",
             "Colaborar con equipos multifuncionales incluyendo diseñadores, gerentes de producto y otros desarrolladores para crear productos de alta calidad.",
             "Gestión de equipos de desarrollo.",
-            "Participar en revisiones de código y proporcionar retroalimentación constructiva a otros desarrolladores.",
+            "Participar en revisiones de código y proporcionar retroalimentación construtiva a otros desarrolladores.",
           ],
         },
         sifat: {
@@ -335,7 +435,7 @@ export const translations: Record<string, Translations> = {
             "Desarrollo y mantenimiento de aplicaciones web usando React.js en el frontend y Java en el backend.",
             "Colaborar con equipos multifuncionales incluyendo diseñadores, gerentes de producto y otros desarrolladores para crear productos de alta calidad.",
             "Gestión y coordinación de equipos de desarrollo, asegurando la entrega dentro de los plazos y según los estándares de calidad.",
-            "Participar en revisiones de código y proporcionar retroalimentación constructiva a otros desarrolladores.",
+            "Participar en revisiones de código y proporcionar retroalimentación construtiva a otros desarrolladores.",
             "Supervisión y optimización de soluciones de automatización comercial, incluyendo sistemas de POS, ERP y CRM.",
             "Identificación e implementación de mejoras en procesos y sistemas para aumentar la eficiencia y escalabilidad.",
             "Entrenamiento y mentoría de desarrolladores, promoviendo la adopción de mejores prácticas y el desarrollo continuo del equipo.",
@@ -347,6 +447,30 @@ export const translations: Record<string, Translations> = {
       title: "Proyectos",
       subtitle: "Mi trabajo",
       items: {
+        marketplace: {
+          description:
+            "Marketplace completo desarrollado con tRPC, TypeScript, Payload CMS, garantizando type-safety y rendimiento optimizado.",
+        },
+        sbtCaravanas: {
+          description:
+            "Portal oficial del programa Caravanas de SBT, desarrollado con tecnologías modernas para alto rendimiento y experiencia del usuario.",
+        },
+        gssWebsite: {
+          description:
+            "Sitio web institucional del Grupo Silvio Santos, enfocado en presentar la empresa y sus valores de manera moderna y responsiva.",
+        },
+        agritech: {
+          description:
+            "Plataforma de gestión de granjas y agricultura 4.0, integrando IoT, análisis de datos y automatización para optimización agrícola.",
+        },
+        iiitekWebsite: {
+          description:
+            "Sitio web institucional de IIItek Technology, presentando soluciones tecnológicas innovadoras con diseño moderno y responsivo.",
+        },
+        grupoA3: {
+          description:
+            "Portal institucional del Grupo A3, desarrollado con enfoque en rendimiento y experiencia del usuario, presentando los servicios de la empresa.",
+        },
         waymenu: {
           description:
             "Menú digital para restaurantes, desarrollado con React.js, Material UI y otras tecnologías.",
@@ -357,7 +481,7 @@ export const translations: Record<string, Translations> = {
         },
         dynamometer: {
           description:
-            "Software del dinamómetro inercial Pegasus Pro, desarrollado con HTML, CSS, JavaScript, lenguaje C y microcontrolador ESP32.",
+            "Software del dinamómetro inercial Pegasus Pro, desarrollado com HTML, CSS, JavaScript, lenguaje C y microcontrolador ESP32.",
         },
       },
     },

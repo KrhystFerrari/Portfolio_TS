@@ -25,6 +25,7 @@ import Pegasus from "./company/Pegasus.png";
 import perfil from "./company/perfil.png";
 import iiitek from "./company/iiitek.png";
 import sifat from "./company/sifat.jpg";
+import nous from "./company/nous_logo.jpeg";
 
 import dinamometro from "./dinamometro.png";
 import waymenu from "./waymenu.jpg";
@@ -56,6 +57,7 @@ export {
   iiitek,
   sifat,
   Pegasus,
+  nous,
   perfil,
   dinamometro,
   waymenu,
