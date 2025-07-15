@@ -23,6 +23,12 @@ import {
   waymenu,
   bun,
   mui,
+  ecommerce,
+  caravanas,
+  gss,
+  siteIiitek,
+  a3,
+  agritech,
 } from "../assets/index";
 import { translations } from "./translations";
 import type { NavLink, Service, Technology, Experience, Project } from "../types";
@@ -172,30 +178,6 @@ export const getExperiences = (language: Language): Experience[] => [
 export const getProjects = (language: Language): Project[] => [
   {
     name: (() => {
-      if (language === "pt") return "Marketplace E-commerce";
-      if (language === "en") return "E-commerce Marketplace";
-      return "Marketplace E-comercio";
-    })(),
-    description: translations[language].projects.items.marketplace.description,
-    tags: [
-      {
-        name: "TypeScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tRPC",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Payload CMS",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
-  },
-  {
-    name: (() => {
       if (language === "pt") return "Portal Caravanas - SBT";
       if (language === "en") return "Caravanas Portal - SBT";
       return "Portal Caravanas - SBT";
@@ -215,8 +197,8 @@ export const getProjects = (language: Language): Project[] => [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
+    image: caravanas,
+    source_code_link: "https://tv.sbt.com.br/inscricoes",
   },
   {
     name: (() => {
@@ -239,8 +221,8 @@ export const getProjects = (language: Language): Project[] => [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
+    image: gss,
+    source_code_link: "https://gruposilviosantos.com.br/",
   },
   {
     name: (() => {
@@ -263,7 +245,7 @@ export const getProjects = (language: Language): Project[] => [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
+    image: agritech,
     source_code_link: "#",
   },
   {
@@ -287,7 +269,7 @@ export const getProjects = (language: Language): Project[] => [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
+    image: siteIiitek,
     source_code_link: "https://iiitek.com.br",
   },
   {
@@ -311,53 +293,8 @@ export const getProjects = (language: Language): Project[] => [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
-  },
-  {
-    name: "WayMenu",
-    description: translations[language].projects.items.waymenu.description,
-    tags: [
-      {
-        name: "JavaScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "React.js",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Material-UI",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: waymenu,
-    source_code_link: "https://sifat.com.br/waymenu/",
-  },
-  {
-    // Extracted ternary operation into an independent statement
-    name: (() => {
-      if (language === "pt") return "Backend Bun e Clean-Arch";
-      if (language === "en") return "Bun Backend & Clean-Arch";
-      return "Backend Bun y Clean-Arch";
-    })(),
-    description: translations[language].projects.items.bunBackend.description,
-    tags: [
-      {
-        name: "Bun",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Elysia",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Prisma ORM",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: bun,
-    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
+    image: a3,
+    source_code_link: "https://a3equipamentos.com.br/",
   },
   {
     name: (() => {
@@ -386,6 +323,76 @@ export const getProjects = (language: Language): Project[] => [
     ],
     image: dinamometro,
     source_code_link: "https://home.pegasuspro.com.br/",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Marketplace E-commerce";
+      if (language === "en") return "E-commerce Marketplace";
+      return "Marketplace E-comercio";
+    })(),
+    description: translations[language].projects.items.marketplace.description,
+    tags: [
+      {
+        name: "TypeScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tRPC",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Payload CMS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ecommerce,
+    source_code_link:
+      "https://github.com/KrhystFerrari/Marketplace-with-Next.js-14-tRPC-TS-Payload-Tailwind-CSS-MongoDB-e-mais",
+  },
+  {
+    // Extracted ternary operation into an independent statement
+    name: (() => {
+      if (language === "pt") return "Backend Bun e Clean-Arch";
+      if (language === "en") return "Bun Backend & Clean-Arch";
+      return "Backend Bun y Clean-Arch";
+    })(),
+    description: translations[language].projects.items.bunBackend.description,
+    tags: [
+      {
+        name: "Bun",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Elysia",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Prisma ORM",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bun,
+    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
+  },
+  {
+    name: "WayMenu",
+    description: translations[language].projects.items.waymenu.description,
+    tags: [
+      {
+        name: "JavaScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Material-UI",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu,
+    source_code_link: "https://sifat.com.br/waymenu/",
   },
 ];
 

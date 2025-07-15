@@ -23,6 +23,12 @@ import {
   waymenu,
   bun,
   mui,
+  ecommerce,
+  caravanas,
+  gss,
+  siteIiitek,
+  a3,
+  agritech,
 } from "../assets/index";
 
 import type { NavLink, Service, Technology, Experience, Project } from "../types";
@@ -176,27 +182,6 @@ const experiences: Experience[] = [
 
 const projects: Project[] = [
   {
-    name: "Marketplace E-commerce",
-    description:
-      "Marketplace completo desenvolvido com tRPC, TypeScript, Payload CMS, garantindo type-safety e performance otimizada.",
-    tags: [
-      {
-        name: "TypeScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tRPC",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Payload CMS",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
-  },
-  {
     name: "Portal Caravanas - SBT",
     description:
       "Portal oficial do programa Caravanas do SBT, desenvolvido com tecnologias modernas para alta performance e experiência do usuário.",
@@ -214,8 +199,8 @@ const projects: Project[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
+    image: caravanas,
+    source_code_link: "https://tv.sbt.com.br/inscricoes",
   },
   {
     name: "Site GSS - Grupo Silvio Santos",
@@ -235,8 +220,8 @@ const projects: Project[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
+    image: gss,
+    source_code_link: "https://gruposilviosantos.com.br/",
   },
   {
     name: "AgriTech 4.0 - IIItek",
@@ -256,7 +241,7 @@ const projects: Project[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
+    image: agritech,
     source_code_link: "#",
   },
   {
@@ -277,7 +262,7 @@ const projects: Project[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
+    image: siteIiitek,
     source_code_link: "https://iiitek.com.br",
   },
   {
@@ -298,50 +283,8 @@ const projects: Project[] = [
         color: "pink-text-gradient",
       },
     ],
-    image: waymenu, // Você pode adicionar uma imagem específica depois
-    source_code_link: "#",
-  },
-  {
-    name: "WayMenu",
-    description:
-      "Cardápio digital para restaurantes, desenvolvido com React.js, Material UI entre outros.",
-    tags: [
-      {
-        name: "JavaScript",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "React.js",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Material-UI",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: waymenu,
-    source_code_link: "https://sifat.com.br/waymenu/",
-  },
-  {
-    name: "Backend Bun e Clean-Arch",
-    description:
-      "Backend construido com a nova tecnologias Bun e utilizando arquitetura limpa e Prisma.",
-    tags: [
-      {
-        name: "Bun",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Elysia",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Prisma ORM",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: bun,
-    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
+    image: a3,
+    source_code_link: "https://a3equipamentos.com.br/",
   },
   {
     name: "Software Dinamômetro Pegasus Pro",
@@ -367,6 +310,70 @@ const projects: Project[] = [
     ],
     image: dinamometro,
     source_code_link: "https://home.pegasuspro.com.br/",
+  },
+  {
+    name: "Marketplace E-commerce",
+    description:
+      "Marketplace completo desenvolvido com tRPC, TypeScript, Payload CMS, garantindo type-safety e performance otimizada.",
+    tags: [
+      {
+        name: "TypeScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tRPC",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Payload CMS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ecommerce,
+    source_code_link:
+      "https://github.com/KrhystFerrari/Marketplace-with-Next.js-14-tRPC-TS-Payload-Tailwind-CSS-MongoDB-e-mais",
+  },
+  {
+    name: "Backend Bun e Clean-Arch",
+    description:
+      "Backend construido com a nova tecnologias Bun e utilizando arquitetura limpa e Prisma.",
+    tags: [
+      {
+        name: "Bun",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Elysia",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Prisma ORM",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: bun,
+    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
+  },
+  {
+    name: "WayMenu",
+    description:
+      "Cardápio digital para restaurantes, desenvolvido com React.js, Material UI entre outros.",
+    tags: [
+      {
+        name: "JavaScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "React.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Material-UI",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: waymenu,
+    source_code_link: "https://sifat.com.br/waymenu/",
   },
 ];
 

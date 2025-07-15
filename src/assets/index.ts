@@ -31,6 +31,12 @@ import dinamometro from "./dinamometro.png";
 import waymenu from "./waymenu.jpg";
 import responsividade from "./responsividade-dicas.png";
 import bun from "./bun.webp";
+import ecommerce from "./ecommerce.png";
+import caravanas from "./caravanas.png";
+import gss from "./gss.png";
+import siteIiitek from "./site-iiitek.png";
+import a3 from "./a3.png";
+import agritech from "./agritech.png";
 
 export {
   logo,
@@ -63,4 +69,10 @@ export {
   waymenu,
   responsividade,
   bun,
+  ecommerce,
+  caravanas,
+  gss,
+  siteIiitek,
+  a3,
+  agritech,
 };
