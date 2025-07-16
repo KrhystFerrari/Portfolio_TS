@@ -130,9 +130,9 @@ export const translations: Record<string, Translations> = {
         'Olá! Sou Krhystofferson Ferrari, tenho 33 anos e atuo como Desenvolvedor Front-end e Engenheiro de Software.\nNascido em 1992, em São José do Rio Preto - SP, cresci em um lar simples, mas cercado de princípios e incentivo à educação. Ganhei meu primeiro computador aos 11 anos e, desde então, nunca mais larguei a tecnologia — virei o famoso "menino que conserta os PCs" da vizinhança.\n\nAos 14 anos, tive meu primeiro contato com programação ao criar automações para jogos usando a linguagem Lua. Desde cedo, percebi o poder de transformar ideias em soluções através do código.\n\nSou autodidata e tenho experiência sólida em TypeScript, JavaScript, React.js, Node.js e Next.js. Gosto de estar próximo dos clientes para entender necessidades reais e criar soluções eficientes, escaláveis e fáceis de usar.\nJá liderei equipes, trabalhei com sistemas embarcados (IoT) e também atuei como desenvolvedor fullstack, sempre buscando uma visão completa das soluções que construo. Hoje, atuo como Desenvolvedor Front-end Sênior e Engenheiro de Software na Noûs, prestando consultoria para o SBT Lab.\n\nVamos conversar? Transformar ideias em projetos reais é meu trabalho!',
       services: {
         softwareEngineer: "Engenheiro de Software",
-        softwareArchitect: "Arquiteto de Software",
-        softwareDeveloper: "Desenvolvedor de Software",
-        techLead: "Head de Tecnologia",
+        softwareArchitect: "Desenvolvedor Front-end",
+        softwareDeveloper: "Desenvolvedor IoT",
+        techLead: "Desenvolvedor Full Stack",
       },
     },
     experience: {
@@ -157,7 +157,7 @@ export const translations: Record<string, Translations> = {
           ],
         },
         iiitek: {
-          title: "Engenheiro de Software/Head de Tecnologia",
+          title: "Engenheiro de Software/Desenvolvedor Full Stack",
           points: [
             "Desenvolvimento e manutenção de aplicações web usando React.js, Next.js e outras tecnologias relacionadas.",
             "Colaborar com equipes multifuncionais, incluindo designers, gerentes de produto e outros desenvolvedores para criar produtos de alta qualidade.",
@@ -262,9 +262,9 @@ export const translations: Record<string, Translations> = {
         "Hello! I'm Krhystofferson Ferrari, I'm 33 years old and I work as a Front-end Developer and Software Engineer.\nBorn in 1992, in São José do Rio Preto - SP, I grew up in a simple home, but surrounded by principles and encouragement for education. I got my first computer at age 11 and since then, I never let go of technology — I became the famous \"boy who fixes PCs\" in the neighborhood.\n\nAt age 14, I had my first contact with programming by creating automations for games using the Lua language. Early on, I realized the power of transforming ideas into solutions through code.\n\nI'm self-taught and have solid experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I like to be close to clients to understand real needs and create efficient, scalable, and user-friendly solutions.\nI've already led teams, worked with embedded systems (IoT) and also worked as a fullstack developer, always seeking a complete view of the solutions I build. Today, I work as a Senior Front-end Developer and Software Engineer at Noûs, providing consulting for SBT Lab.\n\nLet's talk? Transforming ideas into real projects is my job!",
       services: {
         softwareEngineer: "Software Engineer",
-        softwareArchitect: "Software Architect",
-        softwareDeveloper: "Software Developer",
-        techLead: "Technology Lead",
+        softwareArchitect: "Front-end Developer",
+        softwareDeveloper: "IoT Developer",
+        techLead: "Full Stack Developer",
       },
     },
     experience: {
@@ -289,7 +289,7 @@ export const translations: Record<string, Translations> = {
           ],
         },
         iiitek: {
-          title: "Software Engineer/Head of Technology",
+          title: "Software Engineer/Full Stack Developer",
           points: [
             "Development and maintenance of web applications using React.js, Next.js, and other related technologies.",
             "Collaborate with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -394,9 +394,9 @@ export const translations: Record<string, Translations> = {
         '¡Hola! Soy Krhystofferson Ferrari, tengo 33 años y trabajo como Desarrollador Front-end e Ingeniero de Software.\nNacido en 1992, en São José do Rio Preto - SP, crecí en un hogar simple, pero rodeado de principios y estímulo a la educación. Conseguí mi primera computadora a los 11 años y desde entonces, nunca dejé la tecnología — me convertí en el famoso "niño que arregla las PCs" del vecindario.\n\nA los 14 años, tuve mi primer contacto con la programación al crear automatizaciones para juegos usando el lenguaje Lua. Desde temprano, me di cuenta del poder de transformar ideas en soluciones a través del código.\n\nSoy autodidacta y tengo experiencia sólida en TypeScript, JavaScript, React.js, Node.js y Next.js. Me gusta estar cerca de los clientes para entender las necesidades reales y crear soluciones eficientes, escalables y fáciles de usar.\nYa he liderado equipos, trabajé con sistemas embebidos (IoT) y también actué como desarrollador fullstack, siempre buscando una visión completa de las soluciones que construyo. Hoy, trabajo como Desarrollador Front-end Senior e Ingeniero de Software en Noûs, prestando consultoría para SBT Lab.\n\n¿Conversamos? ¡Transformar ideas en proyectos reales es mi trabajo!',
       services: {
         softwareEngineer: "Ingeniero de Software",
-        softwareArchitect: "Arquitecto de Software",
-        softwareDeveloper: "Desarrollador de Software",
-        techLead: "Líder de Tecnología",
+        softwareArchitect: "Desarrollador Front-end",
+        softwareDeveloper: "Desarrollador IoT",
+        techLead: "Desarrollador Full Stack",
       },
     },
     experience: {
@@ -421,7 +421,7 @@ export const translations: Record<string, Translations> = {
           ],
         },
         iiitek: {
-          title: "Ingeniero de Software/Jefe de Tecnología",
+          title: "Ingeniero de Software/Desarrollador Full Stack",
           points: [
             "Desarrollo y mantenimiento de aplicaciones web usando React.js, Next.js y otras tecnologias relacionadas.",
             "Colaborar con equipos multifuncionales incluyendo diseñadores, gerentes de producto y otros desarrolladores para crear productos de alta calidad.",
