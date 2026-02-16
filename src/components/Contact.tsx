@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
 
     emailjs
       .send(
-        "service_tuispio",
+        "service_nve39ef",
         "template_nkseh3r",
         {
           from_name: form.name,
