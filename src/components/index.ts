@@ -1,4 +1,4 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from "./canvas/index";
+import { EarthCanvas, BallCanvas, ComputersCanvas } from "./canvas/index";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -11,6 +11,10 @@ import LanguageSelector from "./LanguageSelector";
 import BackToTop from "./BackToTop";
 import Model3DFallback from "./Model3DFallback";
 import CanvasErrorBoundary from "./CanvasErrorBoundary";
+import HeroFallback from "./HeroFallback";
+import TechFallback from "./TechFallback";
+import EarthFallback from "./EarthFallback";
+import TypingAnimation from "./TypingAnimation";
 
 export {
   Hero,
@@ -28,5 +32,8 @@ export {
   EarthCanvas,
   BallCanvas,
   ComputersCanvas,
-  StarsCanvas,
+  HeroFallback,
+  TechFallback,
+  EarthFallback,
+  TypingAnimation,
 };

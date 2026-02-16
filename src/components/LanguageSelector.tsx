@@ -87,7 +87,7 @@ const LanguageSelector: React.FC = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={handleKeyDown}
-        className="bg-tertiary text-white px-3 py-2 rounded-lg border border-secondary focus:outline-none focus:border-primary cursor-pointer min-w-[120px] text-sm font-medium flex items-center justify-between"
+        className="bg-[#0d1117]/80 backdrop-blur-sm text-white px-3 py-2 rounded-lg border-2 border-[#00ff96]/50 hover:border-[#00ff96] hover:shadow-[0_0_10px_rgba(0,255,150,0.5)] focus:outline-none focus:border-[#00ff96] focus:shadow-[0_0_10px_rgba(0,255,150,0.5)] cursor-pointer min-w-[120px] text-sm font-medium flex items-center justify-between transition-all duration-200"
         title="Selecionar idioma / Select language / Seleccionar idioma"
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -97,7 +97,7 @@ const LanguageSelector: React.FC = () => {
           <span>{currentLanguage.name}</span>
         </span>
         <svg
-          className={`w-4 h-4 text-secondary transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-[#00ff96] transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -110,17 +110,17 @@ const LanguageSelector: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute top-full left-0 mt-1 w-full bg-tertiary border border-secondary rounded-lg shadow-lg z-50">
+        <div className="absolute top-full left-0 mt-1 w-full bg-[#0d1117]/95 backdrop-blur-md border-2 border-[#00ff96]/50 rounded-lg shadow-xl shadow-[#00ff96]/20 z-50">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
-              className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-secondary transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                lang.code === language ? "bg-secondary" : ""
+              className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-[#00ff96]/10 hover:text-[#00ff96] transition-all duration-200 first:rounded-t-lg last:rounded-b-lg ${
+                lang.code === language ? "bg-[#00ff96]/20 text-[#00ff96]" : "text-gray-300"
               }`}
             >
               <FlagIcon country={lang.country} />
-              <span className="text-white">{lang.name}</span>
+              <span>{lang.name}</span>
             </button>
           ))}
         </div>

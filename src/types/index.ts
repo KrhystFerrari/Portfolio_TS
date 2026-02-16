@@ -4,12 +4,15 @@
 export interface ServiceCardProps {
   index: number;
   title: string;
-  icon: string;
+  description: string;
+  sectionVisible?: boolean;
+  onCardVisible?: () => void;
 }
 
 // Tipos para services do constants
 export interface Service {
   title: string;
+  description: string;
   icon: string;
 }
 
@@ -60,6 +63,7 @@ export interface Experience {
   title: string;
   company_name: string;
   icon: string;
+  secondaryIcon?: string;
   iconBg: string;
   date: string;
   points: string[];

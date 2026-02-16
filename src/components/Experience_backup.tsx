@@ -54,8 +54,17 @@ const FlipIcon: React.FC<{ icon: string; secondaryIcon: string; companyName: str
             transform: rotateY(180deg);
           }
 
+          @keyframes matrix-icon-glow {
+            0%, 100% {
+              filter: drop-shadow(0 0 8px rgba(0, 255, 150, 0.6));
+            }
+            50% {
+              filter: drop-shadow(0 0 16px rgba(0, 255, 150, 0.9));
+            }
+          }
+
           .flip-container img {
-            /* No glow animation */
+            animation: matrix-icon-glow 2s ease-in-out infinite;
           }
         `}
       </style>
@@ -75,36 +84,28 @@ const FlipIcon: React.FC<{ icon: string; secondaryIcon: string; companyName: str
   );
 };
 
-const ExperienceCard: React.FC<
-  ExperienceCardProps & { index: number; sectionVisible: boolean }
-> = ({ experience, index, sectionVisible }) => {
+const ExperienceCard: React.FC<ExperienceCardProps & { index: number }> = ({
+  experience,
+  index,
+}) => {
   const [displayedTitle, setDisplayedTitle] = useState("");
   const [isTypingTitle, setIsTypingTitle] = useState(false);
   const [showPoints, setShowPoints] = useState(false);
   const [cardVisible, setCardVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Intersection Observer for individual card - only works when main section is visible
+  // Intersection Observer for individual card
   useEffect(() => {
-    if (!sectionVisible) return; // Don't start observing until main section is visible
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Only start animation if:
-        // 1. Main section is visible
-        // 2. Card is significantly visible
-        // 3. Card hasn't been animated yet
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5 && !cardVisible) {
-          // Stagger animation based on index
+        if (entry.isIntersecting && !cardVisible) {
+          // Delay based on index to stagger animations
           setTimeout(() => {
             setCardVisible(true);
-          }, index * 400); // Reduced to 400ms for smoother experience
+          }, index * 2000);
         }
       },
-      {
-        threshold: [0.3, 0.5, 0.7], // Multiple thresholds for better control
-        rootMargin: "-100px 0px -100px 0px", // More conservative margin
-      }
+      { threshold: 0.3 }
     );
 
     const currentRef = cardRef.current;
@@ -117,7 +118,7 @@ const ExperienceCard: React.FC<
         observer.unobserve(currentRef);
       }
     };
-  }, [sectionVisible, cardVisible, index]); // Added sectionVisible to dependencies
+  }, [cardVisible, index]);
 
   // Start typing animation only when card becomes visible
   useEffect(() => {
@@ -154,7 +155,6 @@ const ExperienceCard: React.FC<
   return (
     <div ref={cardRef}>
       <VerticalTimelineElement
-        position={index % 2 === 0 ? "left" : "right"}
         contentStyle={{
           background: "#0d1117",
           color: "#fff",
@@ -163,12 +163,13 @@ const ExperienceCard: React.FC<
           borderRadius: "8px",
         }}
         contentArrowStyle={{
-          borderRight: index % 2 === 0 ? "7px solid rgba(0, 255, 150, 0.3)" : "none",
-          borderLeft: index % 2 === 0 ? "none" : "7px solid rgba(0, 255, 150, 0.3)",
+          borderRight: "7px solid rgba(0, 255, 150, 0.3)",
         }}
         date={experience.date}
         iconStyle={{
-          background: "#000000",
+          background: "#0d1117",
+          border: "3px solid #00ff96",
+          boxShadow: "0 0 20px rgba(0, 255, 150, 0.5), inset 0 0 10px rgba(0, 255, 150, 0.2)",
         }}
         icon={
           <div className="flex justify-center items-center w-full h-full">
@@ -182,7 +183,10 @@ const ExperienceCard: React.FC<
               <img
                 src={experience.icon}
                 alt={experience.company_name}
-                className="w-[60%] h-[60%] object-contain rounded-full"
+                className="w-[60%] h-[60%] object-contain"
+                style={{
+                  filter: "drop-shadow(0 0 8px rgba(0, 255, 150, 0.6))",
+                }}
               />
             )}
           </div>
@@ -280,38 +284,6 @@ const ExperienceCard: React.FC<
 const ExperienceSection: React.FC = () => {
   const { language } = useLanguage();
   const experiences = getExperiences(language);
-  const [sectionVisible, setSectionVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  // Main section visibility observer - only trigger animations when user is really in this section
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Only mark section as visible when it's really in view
-        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-          // Add small delay to ensure scroll has stopped
-          setTimeout(() => {
-            setSectionVisible(true);
-          }, 300);
-        }
-      },
-      {
-        threshold: [0.1, 0.3, 0.5],
-        rootMargin: "-80px 0px -80px 0px",
-      }
-    );
-
-    const currentRef = sectionRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
 
   const getCompaniesSubtitle = () => {
     let subtitle;
@@ -338,7 +310,7 @@ const ExperienceSection: React.FC = () => {
   };
 
   return (
-    <div ref={sectionRef}>
+    <div>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} text-center text-[#00ff96]`}>
           {getCompaniesSubtitle()}
@@ -363,12 +335,7 @@ const ExperienceSection: React.FC = () => {
 
         <VerticalTimeline lineColor="rgba(0, 255, 150, 0.3)">
           {experiences.map((experience: Experience, index: number) => (
-            <ExperienceCard
-              key={experience.company_name}
-              experience={experience}
-              index={index}
-              sectionVisible={sectionVisible}
-            />
+            <ExperienceCard key={experience.company_name} experience={experience} index={index} />
           ))}
         </VerticalTimeline>
       </div>
@@ -392,20 +359,6 @@ const ExperienceSection: React.FC = () => {
           text-shadow: 0 0 10px rgba(0, 255, 150, 0.5);
         }
 
-        /* Add spacing between timeline elements on mobile */
-        @media only screen and (max-width: 767px) {
-          .vertical-timeline-element {
-            margin-bottom: 2.5rem !important;
-          }
-        }
-
-        /* Add spacing between timeline elements on tablet */
-        @media only screen and (min-width: 768px) and (max-width: 1169px) {
-          .vertical-timeline-element {
-            margin-bottom: 3rem !important;
-          }
-        }
-
         @media only screen and (min-width: 1170px) {
           .vertical-timeline-element-date {
             color: #00ff96 !important;
@@ -416,6 +369,6 @@ const ExperienceSection: React.FC = () => {
   );
 };
 
-const ExperienceWithWrapper = SectionWrapper(ExperienceSection, "experience");
+const ExperienceWithWrapper = SectionWrapper(ExperienceSection, "work");
 
 export default ExperienceWithWrapper;

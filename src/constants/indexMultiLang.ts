@@ -1,5 +1,4 @@
 import {
-  mobile,
   backend,
   creator,
   web,
@@ -19,9 +18,9 @@ import {
   iiitek,
   sifat,
   nous,
+  sbt,
   dinamometro,
   waymenu,
-  bun,
   mui,
   ecommerce,
   caravanas,
@@ -29,6 +28,11 @@ import {
   siteIiitek,
   a3,
   agritech,
+  thevoice,
+  sbtdobem,
+  uikit,
+  premiado,
+  relayout,
 } from "../assets/index";
 import { translations } from "./translations";
 import type { NavLink, Service, Technology, Experience, Project } from "../types";
@@ -38,6 +42,10 @@ export const getNavLinks = (language: Language): NavLink[] => [
   {
     id: "about",
     title: translations[language].nav.about,
+  },
+  {
+    id: "experience",
+    title: translations[language].nav.experience,
   },
   {
     id: "work",
@@ -51,19 +59,18 @@ export const getNavLinks = (language: Language): NavLink[] => [
 
 export const getServices = (language: Language): Service[] => [
   {
-    title: translations[language].about.services.softwareEngineer,
+    title: translations[language].about.services.frontendEngineer.title,
+    description: translations[language].about.services.frontendEngineer.description,
     icon: web,
   },
   {
-    title: translations[language].about.services.softwareArchitect,
+    title: translations[language].about.services.frontendDeveloper.title,
+    description: translations[language].about.services.frontendDeveloper.description,
     icon: backend,
   },
   {
-    title: translations[language].about.services.softwareDeveloper,
-    icon: mobile,
-  },
-  {
-    title: translations[language].about.services.techLead,
+    title: translations[language].about.services.frontendConsultant.title,
+    description: translations[language].about.services.frontendConsultant.description,
     icon: creator,
   },
 ];
@@ -163,8 +170,9 @@ export const getExperiences = (language: Language): Experience[] => [
   },
   {
     title: translations[language].experience.experiences.nous.title,
-    company_name: "Noûs",
+    company_name: "Noûs | SBT Lab",
     icon: nous,
+    secondaryIcon: sbt,
     iconBg: "#000000",
     date: (() => {
       if (language === "pt") return "Setembro 2024 - Presente";
@@ -178,28 +186,123 @@ export const getExperiences = (language: Language): Experience[] => [
 export const getProjects = (language: Language): Project[] => [
   {
     name: (() => {
-      if (language === "pt") return "Marketplace E-commerce";
-      if (language === "en") return "E-commerce Marketplace";
-      return "Marketplace E-comercio";
+      if (language === "pt") return "The Voice Brasil 2025 - SBT";
+      if (language === "en") return "The Voice Brasil 2025 - SBT";
+      return "The Voice Brasil 2025 - SBT";
     })(),
-    description: translations[language].projects.items.marketplace.description,
+    description: translations[language].projects.items.theVoiceBrasil2025.description,
     tags: [
       {
-        name: "TypeScript",
+        name: "Next.js",
         color: "blue-text-gradient",
       },
       {
-        name: "tRPC",
+        name: "TypeScript",
         color: "green-text-gradient",
       },
       {
-        name: "Payload CMS",
+        name: "TailwindCSS",
         color: "pink-text-gradient",
       },
     ],
-    image: ecommerce,
-    source_code_link:
-      "https://github.com/KrhystFerrari/Marketplace-with-Next.js-14-tRPC-TS-Payload-Tailwind-CSS-MongoDB-e-mais",
+    image: thevoice,
+    source_code_link: "https://thevoicebrasil.sbt.com.br/",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Redesign Portais SBT";
+      if (language === "en") return "SBT Portals Redesign";
+      return "Rediseño Portales SBT";
+    })(),
+    description: translations[language].projects.items.sbtPortalsRelayout.description,
+    tags: [
+      {
+        name: "Next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Design System",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: relayout,
+    source_code_link: "https://www.sbt.com.br",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "SBT UI Kit";
+      if (language === "en") return "SBT UI Kit";
+      return "SBT UI Kit";
+    })(),
+    description: translations[language].projects.items.sbtUIKit.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Vite",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Storybook",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: uikit,
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "SBT Premiado";
+      if (language === "en") return "SBT Premiado";
+      return "SBT Premiado";
+    })(),
+    description: translations[language].projects.items.sbtPremiado.description,
+    tags: [
+      {
+        name: "Next.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "API Integration",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: premiado,
+    source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "SBT do Bem";
+      if (language === "en") return "SBT do Bem";
+      return "SBT do Bem";
+    })(),
+    description: translations[language].projects.items.sbtDoBem.description,
+    tags: [
+      {
+        name: "React.js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Next.js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "TypeScript",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: sbtdobem,
+    source_code_link: "#",
   },
   {
     name: (() => {
@@ -248,6 +351,59 @@ export const getProjects = (language: Language): Project[] => [
     ],
     image: gss,
     source_code_link: "#",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Marketplace E-commerce";
+      if (language === "en") return "E-commerce Marketplace";
+      return "Marketplace E-comercio";
+    })(),
+    description: translations[language].projects.items.marketplace.description,
+    tags: [
+      {
+        name: "TypeScript",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "tRPC",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Payload CMS",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ecommerce,
+    source_code_link:
+      "https://github.com/KrhystFerrari/Marketplace-with-Next.js-14-tRPC-TS-Payload-Tailwind-CSS-MongoDB-e-mais",
+  },
+  {
+    name: (() => {
+      if (language === "pt") return "Software Dinamômetro Pegasus Pro";
+      if (language === "en") return "Pegasus Pro Dynamometer Software";
+      return "Software Dinamómetro Pegasus Pro";
+    })(),
+    description: translations[language].projects.items.dynamometer.description,
+    tags: [
+      {
+        name: "HTML",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "CSS",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "JavaScript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "C",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: dinamometro,
+    source_code_link: "https://home.pegasuspro.com.br/",
   },
   {
     name: (() => {
@@ -340,59 +496,6 @@ export const getProjects = (language: Language): Project[] => [
     ],
     image: waymenu,
     source_code_link: "https://sifat.com.br/waymenu/",
-  },
-  {
-    // Extracted ternary operation into an independent statement
-    name: (() => {
-      if (language === "pt") return "Backend Bun e Clean-Arch";
-      if (language === "en") return "Bun Backend & Clean-Arch";
-      return "Backend Bun y Clean-Arch";
-    })(),
-    description: translations[language].projects.items.bunBackend.description,
-    tags: [
-      {
-        name: "Bun",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Elysia",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Prisma ORM",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: bun,
-    source_code_link: "https://github.com/KrhystFerrari/Backend-Bun-Elysia-Prisma-Clean-Arch",
-  },
-  {
-    name: (() => {
-      if (language === "pt") return "Software Dinamômetro Pegasus Pro";
-      if (language === "en") return "Pegasus Pro Dynamometer Software";
-      return "Software Dinamómetro Pegasus Pro";
-    })(),
-    description: translations[language].projects.items.dynamometer.description,
-    tags: [
-      {
-        name: "HTML",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "CSS",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "JavaScript",
-        color: "green-text-gradient",
-      },
-      {
-        name: "C",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: dinamometro,
-    source_code_link: "https://home.pegasuspro.com.br/",
   },
 ];
 

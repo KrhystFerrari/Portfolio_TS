@@ -5,6 +5,7 @@ import { styles } from "../styles/index";
 import { ComputersCanvas } from "./canvas/index";
 import { useLanguage } from "../hooks/useLanguage";
 import { translations } from "../constants/translations";
+import TypingAnimation from "./TypingAnimation";
 
 const Hero: React.FC = () => {
   const { language } = useLanguage();
@@ -25,14 +26,19 @@ const Hero: React.FC = () => {
             <span className="text-[#915EFF]">Krhyst Ferrari</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            {t.hero.subtitle} <br className="sm:block hidden" />
+            <TypingAnimation
+              words={t.hero.subtitlePrefixes}
+              suffix={t.hero.subtitleSuffix}
+              prefixFirst={t.hero.prefixFirst}
+            />
+            <br className="sm:block hidden" />
           </p>
         </div>
       </div>
 
       <ComputersCanvas />
 
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
+      <div className="absolute xs:bottom-10 bottom-32 w-full hidden justify-center items-center">
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
             <motion.div

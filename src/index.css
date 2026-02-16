@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +22,10 @@
 }
 
 .hash-span {
-  margin-top: -100px;
-  padding-bottom: 100px;
-  display: block;
+  position: absolute;
+  top: -80px;
+  left: 0;
+  visibility: hidden;
 }
 
 .black-gradient {
@@ -34,9 +39,9 @@
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
-  background: -webkit-linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: #00ff96;
+  background: linear-gradient(-90deg, #00ff96 0%, rgba(0, 255, 150, 0) 100%);
+  background: -webkit-linear-gradient(-90deg, #00ff96 0%, rgba(0, 255, 150, 0) 100%);
 }
 
 .green-pink-gradient {

@@ -10,15 +10,14 @@ import {
   reactjs,
   redux,
   tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
+  nextjs,
+  storybook,
+  vitejs,
   Pegasus,
   iiitek,
   sifat,
   nous,
+  sbt,
   dinamometro,
   waymenu,
   bun,
@@ -47,18 +46,22 @@ export const navLinks: NavLink[] = [
 const services: Service[] = [
   {
     title: "Engenheiro de Software",
+    description: "Desenvolvo soluções de software escaláveis e de alta performance.",
     icon: web,
   },
   {
     title: "Desenvolvedor Front-end",
+    description: "Crio interfaces modernas e responsivas com as melhores tecnologias.",
     icon: backend,
   },
   {
     title: "Desenvolvedor IoT",
+    description: "Integro sistemas embarcados e IoT com aplicações web.",
     icon: mobile,
   },
   {
     title: "Desenvolvedor Full Stack",
+    description: "Desenvolvedor completo, capaz de trabalhar no frontend e backend.",
     icon: creator,
   },
 ];
@@ -93,28 +96,20 @@ const technologies: Technology[] = [
     icon: tailwind,
   },
   {
-    name: "Node JS",
-    icon: nodejs,
+    name: "Next.js",
+    icon: nextjs,
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
+    name: "Storybook",
+    icon: storybook,
   },
   {
     name: "Material UI",
     icon: mui,
   },
   {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    name: "Vite",
+    icon: vitejs,
   },
 ];
 
@@ -161,9 +156,10 @@ const experiences: Experience[] = [
     ],
   },
   {
-    title: "Desenvolvedor Front-end Sênior",
-    company_name: "Noûs",
+    title: "Consultor Front-end Sênior",
+    company_name: "Noûs | SBT Lab",
     icon: nous,
+    secondaryIcon: sbt,
     iconBg: "#000000",
     date: "Setembro 2024 - Presente",
     points: [

@@ -31,10 +31,38 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const performScroll = (targetElement: HTMLElement) => {
+    const navbarHeight = 80;
+    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navbarHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const element = document.getElementById(sectionId);
+
+        if (element) {
+          const section = element.closest("section");
+          const targetElement = section || element;
+
+          setTimeout(() => performScroll(targetElement), 50);
+        }
+      });
+    });
+  };
+
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 transition-all duration-300 ease-in-out ${
-        scrolled ? "bg-primary" : "bg-transparent"
+      className={`${styles.paddingX} w-full flex items-center fixed top-0 z-20 transition-all duration-300 ease-in-out border-b-2 ${
+        scrolled
+          ? "bg-[#0a0a0f]/95 backdrop-blur-md border-[#00ff96] shadow-lg shadow-[#00ff96]/20"
+          : "bg-transparent backdrop-blur-sm border-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -56,9 +84,15 @@ const Navbar: React.FC = () => {
                 <a
                   href={`#${nav.id}`}
                   className={`${
-                    active === nav.title ? "text-white" : "text-secondary"
-                  } hover:text-white text-[18px] font-medium cursor-pointer`}
-                  onClick={() => setActive(nav.title)}
+                    active === nav.title
+                      ? "text-[#00ff96] drop-shadow-[0_0_8px_rgba(0,255,150,0.8)]"
+                      : "text-gray-300"
+                  } hover:text-[#00ff96] hover:drop-shadow-[0_0_8px_rgba(0,255,150,0.6)] text-[18px] font-medium cursor-pointer transition-all duration-200`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActive(nav.title);
+                    scrollToSection(nav.id);
+                  }}
                 >
                   {nav.title}
                 </a>
@@ -74,33 +108,43 @@ const Navbar: React.FC = () => {
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <button
             type="button"
-            className="w-[28px] h-[28px] flex items-center justify-center"
+            className={`w-[28px] h-[28px] flex items-center justify-center transition-all duration-200 ${
+              toggle
+                ? "drop-shadow-[0_0_8px_rgba(0,255,150,0.8)]"
+                : "hover:drop-shadow-[0_0_6px_rgba(0,255,150,0.5)]"
+            }`}
             onClick={() => setToggle(!toggle)}
             aria-label="Toggle menu"
           >
             <img
               src={toggle ? close : menu}
               alt="menu"
-              className="w-[28px] h-[28px] object-contain"
+              className={`w-[28px] h-[28px] object-contain ${
+                toggle ? "brightness-0 invert-[0.7] hue-rotate-[85deg] saturate-[5]" : ""
+              }`}
             />
           </button>
 
           <div
             className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+              toggle ? "flex" : "hidden"
+            } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl bg-[#0d1117]/95 backdrop-blur-md border-2 border-[#00ff96]/30 shadow-xl shadow-[#00ff96]/20`}
           >
             <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
               {navLinks.map((nav: NavLink) => (
                 <li key={nav.id}>
                   <a
                     href={`#${nav.id}`}
-                    className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                      active === nav.title ? "text-white" : "text-secondary"
+                    className={`font-poppins font-medium cursor-pointer text-[16px] transition-all duration-200 ${
+                      active === nav.title
+                        ? "text-[#00ff96] drop-shadow-[0_0_6px_rgba(0,255,150,0.8)]"
+                        : "text-gray-300 hover:text-[#00ff96] hover:drop-shadow-[0_0_6px_rgba(0,255,150,0.6)]"
                     }`}
-                    onClick={() => {
-                      setToggle(!toggle);
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setToggle(false);
                       setActive(nav.title);
+                      scrollToSection(nav.id);
                     }}
                   >
                     {nav.title}

@@ -2,6 +2,7 @@ export interface Translations {
   // Navigation
   nav: {
     about: string;
+    experience: string;
     projects: string;
     contact: string;
   };
@@ -9,6 +10,9 @@ export interface Translations {
   // Hero section
   hero: {
     subtitle: string;
+    subtitlePrefixes: string[];
+    subtitleSuffix: string;
+    prefixFirst: boolean; // true = "Desenvolvedor Front-end", false = "Front-end Developer"
   };
 
   // About section
@@ -17,10 +21,18 @@ export interface Translations {
     title: string;
     description: string;
     services: {
-      softwareEngineer: string;
-      softwareArchitect: string;
-      softwareDeveloper: string;
-      techLead: string;
+      frontendEngineer: {
+        title: string;
+        description: string;
+      };
+      frontendDeveloper: {
+        title: string;
+        description: string;
+      };
+      frontendConsultant: {
+        title: string;
+        description: string;
+      };
     };
   };
 
@@ -52,6 +64,21 @@ export interface Translations {
     title: string;
     subtitle: string;
     items: {
+      theVoiceBrasil2025: {
+        description: string;
+      };
+      sbtDoBem: {
+        description: string;
+      };
+      sbtUIKit: {
+        description: string;
+      };
+      sbtPremiado: {
+        description: string;
+      };
+      sbtPortalsRelayout: {
+        description: string;
+      };
       marketplace: {
         description: string;
       };
@@ -96,6 +123,11 @@ export interface Translations {
       sendButton: string;
       sendingButton: string;
     };
+    directContact: {
+      title: string;
+      linkedin: string;
+      whatsapp: string;
+    };
     alerts: {
       success: string;
       error: string;
@@ -117,29 +149,42 @@ export const translations: Record<string, Translations> = {
   pt: {
     nav: {
       about: "Sobre",
+      experience: "Experiência",
       projects: "Projetos",
       contact: "Contato",
     },
     hero: {
       subtitle: "Desenvolvedor Front-end",
+      subtitlePrefixes: ["Desenvolvedor", "Engenheiro", "Consultor"],
+      subtitleSuffix: "Front-end",
+      prefixFirst: true,
     },
     about: {
       intro: "Intro",
       title: "Sobre mim...",
       description:
-        'Olá! Sou Krhystofferson Ferrari, tenho 33 anos e atuo como Desenvolvedor Front-end e Engenheiro de Software.\nNascido em 1992, em São José do Rio Preto - SP, cresci em um lar simples, mas cercado de princípios e incentivo à educação. Ganhei meu primeiro computador aos 11 anos e, desde então, nunca mais larguei a tecnologia — virei o famoso "menino que conserta os PCs" da vizinhança.\n\nAos 14 anos, tive meu primeiro contato com programação ao criar automações para jogos usando a linguagem Lua. Desde cedo, percebi o poder de transformar ideias em soluções através do código.\n\nSou autodidata e tenho experiência sólida em TypeScript, JavaScript, React.js, Node.js e Next.js. Gosto de estar próximo dos clientes para entender necessidades reais e criar soluções eficientes, escaláveis e fáceis de usar.\nJá liderei equipes, trabalhei com sistemas embarcados (IoT) e também atuei como desenvolvedor fullstack, sempre buscando uma visão completa das soluções que construo. Hoje, atuo como Desenvolvedor Front-end Sênior e Engenheiro de Software na Noûs, prestando consultoria para o SBT Lab.\n\nVamos conversar? Transformar ideias em projetos reais é meu trabalho!',
+        "Sou um Engenheiro Frontend Sênior com mais de oito anos de experiência, construindo minha carreira em uma especialização profunda em JavaScript, TypeScript e no ecossistema React/Next.js. Desde o início da minha jornada em 2017, sou apaixonado por tecnologias de ponta e dedicado a criar aplicações web de alto desempenho e centradas no usuário.\n\nMinha expertise está centrada no desenvolvimento de interfaces sofisticadas e arquiteturas escaláveis utilizando React, Next.js e soluções modernas de estilização como TailwindCSS e Material UI. Uma parte significativa do meu trabalho envolve a construção e manutenção de sistemas de design com Storybook, garantindo consistência, acelerando o desenvolvimento e melhorando a colaboração entre equipes.\n\nAtualmente, atuo em um papel-chave na emissora SBT, onde tenho sido fundamental no redesign completo e no desenvolvimento contínuo de todos os seus portais web. Esse projeto focou na modernização da experiência do usuário, melhoria de performance e implementação de um sistema de design coeso. Uma conquista recente de maior destaque foi o desenvolvimento frontend do site oficial do The Voice Brasil, entregue com sucesso para a estreia de grande visibilidade do programa no final de 2025.\n\nAlém da execução técnica avançada, aplico sólidos princípios de engenharia e arquitetura de software para criar soluções frontend robustas e de fácil manutenção. Também desenvolvi habilidades de liderança através da coordenação de equipes, promovendo ambientes de colaboração e inovação que são cruciais para o sucesso dos projetos. Sou um profissional comprometido e resiliente, reconhecido pela minha capacidade de me adaptar rapidamente e resolver desafios complexos com determinação.\n\nPronto para transformar sua ideia em uma experiência digital de ponta? Vamos conversar.",
       services: {
-        softwareEngineer: "Engenheiro de Software",
-        softwareArchitect: "Desenvolvedor Front-end",
-        softwareDeveloper: "Desenvolvedor IoT",
-        techLead: "Desenvolvedor Full Stack",
+        frontendEngineer: {
+          title: "Engenheiro Front-end",
+          description:
+            "Arquitetura de sistemas front-end escaláveis e soluções técnicas avançadas.",
+        },
+        frontendDeveloper: {
+          title: "Desenvolvedor Front-end",
+          description: "Desenvolvimento de interfaces modernas com React, TypeScript e Next.js.",
+        },
+        frontendConsultant: {
+          title: "Consultor Front-end",
+          description: "Consultoria estratégica em tecnologias front-end e otimização de projetos.",
+        },
       },
     },
     experience: {
       title: "Experiência",
       experiences: {
         nous: {
-          title: "Desenvolvedor Front-end Sênior",
+          title: "Consultor Front-end Sênior",
           points: [
             "Desenvolvimento e manutenção de aplicações web modernas utilizando React.js, TypeScript, Next.js e outras tecnologias de ponta.",
             "Prestação de consultoria técnica especializada para o SBT Lab, contribuindo para projetos inovadores na área de mídia e tecnologia.",
@@ -183,6 +228,26 @@ export const translations: Record<string, Translations> = {
       title: "Projetos",
       subtitle: "Meu trabalho",
       items: {
+        theVoiceBrasil2025: {
+          description:
+            "Site oficial do programa The Voice Brasil 2025 para o SBT, desenvolvido com Next.js, TypeScript e TailwindCSS. Entrega de alto impacto para a estreia do programa na emissora, com foco em performance, experiência do usuário e integração com redes sociais.",
+        },
+        sbtDoBem: {
+          description:
+            "Plataforma de responsabilidade social do SBT, desenvolvida com React, Next.js e design system próprio. Portal dedicado a projetos sociais, campanhas beneficentes e ações de impacto social da emissora.",
+        },
+        sbtUIKit: {
+          description:
+            "Sistema de design proprietário do SBT desenvolvido com React, TypeScript, Vite, Storybook e CSS Modules. Biblioteca de componentes reutilizáveis que garante consistência visual e acelera o desenvolvimento em todos os portais da emissora.",
+        },
+        sbtPremiado: {
+          description:
+            "Plataforma de premiações e reconhecimentos do SBT, desenvolvida com Next.js e integração com APIs internas. Sistema para gerenciamento de campanhas promocionais, sorteios e programas de fidelidade da emissora.",
+        },
+        sbtPortalsRelayout: {
+          description:
+            "Redesign completo e modernização de todos os portais web do SBT (sbt.com.br, notícias, esportes, TV), implementando arquitetura escalável com Next.js, sistema de design unificado, otimização de performance e experiência do usuário aprimorada.",
+        },
         marketplace: {
           description:
             "Marketplace completo desenvolvido com tRPC, TypeScript, Payload CMS, garantindo type-safety e performance otimizada.",
@@ -238,6 +303,11 @@ export const translations: Record<string, Translations> = {
         success: "Obrigado. Entrarei em contato em breve.",
         error: "Ah, algo deu errado. Por favor, tente novamente.",
       },
+      directContact: {
+        title: "Ou entre em contato direto:",
+        linkedin: "LinkedIn",
+        whatsapp: "WhatsApp",
+      },
     },
     backToTop: {
       title: "Voltar ao topo",
@@ -249,29 +319,41 @@ export const translations: Record<string, Translations> = {
   en: {
     nav: {
       about: "About",
+      experience: "Experience",
       projects: "Projects",
       contact: "Contact",
     },
     hero: {
       subtitle: "Front-end Developer",
+      subtitlePrefixes: ["Developer", "Engineer", "Consultant"],
+      subtitleSuffix: "Front-end",
+      prefixFirst: false,
     },
     about: {
       intro: "Introduction",
       title: "About me...",
       description:
-        "Hello! I'm Krhystofferson Ferrari, I'm 33 years old and I work as a Front-end Developer and Software Engineer.\nBorn in 1992, in São José do Rio Preto - SP, I grew up in a simple home, but surrounded by principles and encouragement for education. I got my first computer at age 11 and since then, I never let go of technology — I became the famous \"boy who fixes PCs\" in the neighborhood.\n\nAt age 14, I had my first contact with programming by creating automations for games using the Lua language. Early on, I realized the power of transforming ideas into solutions through code.\n\nI'm self-taught and have solid experience in TypeScript, JavaScript, React.js, Node.js, and Next.js. I like to be close to clients to understand real needs and create efficient, scalable, and user-friendly solutions.\nI've already led teams, worked with embedded systems (IoT) and also worked as a fullstack developer, always seeking a complete view of the solutions I build. Today, I work as a Senior Front-end Developer and Software Engineer at Noûs, providing consulting for SBT Lab.\n\nLet's talk? Transforming ideas into real projects is my job!",
+        "I am a Senior Frontend Engineer with over eight years of experience, building my career on deep specialization in JavaScript, TypeScript, and the React/Next.js ecosystem. Since beginning my journey in 2017, I have been passionate about cutting-edge technologies and dedicated to creating high-performance, user-centric web applications.\n\nMy expertise is centered on developing sophisticated interfaces and scalable architectures using React, Next.js, and modern styling solutions like TailwindCSS and Material UI. A significant part of my work involves building and maintaining design systems with Storybook, ensuring consistency, accelerating development, and improving collaboration across teams.\n\nI currently play a key role at the Brazilian broadcaster SBT, where I have been instrumental in the complete redesign and ongoing development of all their web portals. This project focused on modernizing the user experience, improving performance, and implementing a cohesive design system. A major recent achievement was the frontend development of the official The Voice Brasil website, successfully delivered for the show's high-profile premiere at the end of 2025.\n\nBeyond advanced technical execution, I apply solid software engineering and architectural principles to create robust and maintainable frontend solutions. I have also developed leadership skills through team coordination, fostering environments of collaboration and innovation that are crucial for project success. I am a committed and resilient professional, recognized for my ability to quickly adapt and solve complex challenges with determination.\n\nReady to turn your idea into a cutting-edge digital experience? Let's talk.",
       services: {
-        softwareEngineer: "Software Engineer",
-        softwareArchitect: "Front-end Developer",
-        softwareDeveloper: "IoT Developer",
-        techLead: "Full Stack Developer",
+        frontendEngineer: {
+          title: "Frontend Engineer",
+          description: "Scalable frontend system architecture and advanced technical solutions.",
+        },
+        frontendDeveloper: {
+          title: "Frontend Developer",
+          description: "Modern interface development with React, TypeScript and Next.js.",
+        },
+        frontendConsultant: {
+          title: "Frontend Consultant",
+          description: "Strategic consulting on frontend technologies and project optimization.",
+        },
       },
     },
     experience: {
       title: "Experience",
       experiences: {
         nous: {
-          title: "Senior Front-end Developer",
+          title: "Senior Front-end Consultant",
           points: [
             "Development and maintenance of modern web applications using React.js, TypeScript, Next.js, and other cutting-edge technologies.",
             "Providing specialized technical consulting for SBT Lab, contributing to innovative projects in media and technology.",
@@ -315,6 +397,26 @@ export const translations: Record<string, Translations> = {
       title: "Projects",
       subtitle: "My work",
       items: {
+        theVoiceBrasil2025: {
+          description:
+            "Official website for The Voice Brasil 2025 TV show for SBT, developed with Next.js, TypeScript and TailwindCSS. High-impact delivery for the show's premiere on the network, focusing on performance, user experience and social media integration.",
+        },
+        sbtDoBem: {
+          description:
+            "SBT's social responsibility platform, developed with React, Next.js and custom design system. Portal dedicated to social projects, charity campaigns and the broadcaster's social impact actions.",
+        },
+        sbtUIKit: {
+          description:
+            "SBT's proprietary design system developed with React, TypeScript, Vite, Storybook and CSS Modules. Reusable component library that ensures visual consistency and accelerates development across all the broadcaster's portals.",
+        },
+        sbtPremiado: {
+          description:
+            "SBT's awards and recognition platform, developed with Next.js and integration with internal APIs. System for managing promotional campaigns, sweepstakes and the broadcaster's loyalty programs.",
+        },
+        sbtPortalsRelayout: {
+          description:
+            "Complete redesign and modernization of all SBT web portals (sbt.com.br, news, sports, TV), implementing scalable architecture with Next.js, unified design system, performance optimization and enhanced user experience.",
+        },
         marketplace: {
           description:
             "Complete marketplace developed with tRPC, TypeScript, Payload CMS, ensuring type-safety and optimized performance.",
@@ -370,6 +472,11 @@ export const translations: Record<string, Translations> = {
         success: "Thank you. I will get in touch shortly.",
         error: "Oops, something went wrong. Please try again.",
       },
+      directContact: {
+        title: "Or contact me directly:",
+        linkedin: "LinkedIn",
+        whatsapp: "WhatsApp",
+      },
     },
     backToTop: {
       title: "Back to top",
@@ -381,29 +488,43 @@ export const translations: Record<string, Translations> = {
   es: {
     nav: {
       about: "Acerca de",
+      experience: "Experiencia",
       projects: "Proyectos",
       contact: "Contacto",
     },
     hero: {
       subtitle: "Desarrollador Front-end",
+      subtitlePrefixes: ["Desarrollador", "Ingeniero", "Consultor"],
+      subtitleSuffix: "Front-end",
+      prefixFirst: true,
     },
     about: {
       intro: "Introducción",
       title: "Acerca de mí...",
       description:
-        '¡Hola! Soy Krhystofferson Ferrari, tengo 33 años y trabajo como Desarrollador Front-end e Ingeniero de Software.\nNacido en 1992, en São José do Rio Preto - SP, crecí en un hogar simple, pero rodeado de principios y estímulo a la educación. Conseguí mi primera computadora a los 11 años y desde entonces, nunca dejé la tecnología — me convertí en el famoso "niño que arregla las PCs" del vecindario.\n\nA los 14 años, tuve mi primer contacto con la programación al crear automatizaciones para juegos usando el lenguaje Lua. Desde temprano, me di cuenta del poder de transformar ideas en soluciones a través del código.\n\nSoy autodidacta y tengo experiencia sólida en TypeScript, JavaScript, React.js, Node.js y Next.js. Me gusta estar cerca de los clientes para entender las necesidades reales y crear soluciones eficientes, escalables y fáciles de usar.\nYa he liderado equipos, trabajé con sistemas embebidos (IoT) y también actué como desarrollador fullstack, siempre buscando una visión completa de las soluciones que construyo. Hoy, trabajo como Desarrollador Front-end Senior e Ingeniero de Software en Noûs, prestando consultoría para SBT Lab.\n\n¿Conversamos? ¡Transformar ideas en proyectos reales es mi trabajo!',
+        "Soy un Ingeniero Frontend Senior con más de ocho años de experiencia, construyendo mi carrera sobre una especialización profunda en JavaScript, TypeScript y el ecosistema React/Next.js. Desde el inicio de mi trayectoria en 2017, me apasionan las tecnologías de vanguardia y estoy dedicado a crear aplicaciones web de alto rendimiento centradas en el usuario.\n\nMi experiencia se centra en el desarrollo de interfaces sofisticadas y arquitecturas escalables utilizando React, Next.js y soluciones modernas de estilizado como TailwindCSS y Material UI. Una parte significativa de mi trabajo implica la construcción y mantenimiento de sistemas de diseño con Storybook, garantizando consistencia, acelerando el desarrollo y mejorando la colaboración entre equipos.\n\nActualmente, desempeño un papel clave en la emisora brasileña SBT, donde he sido fundamental en el rediseño completo y el desarrollo continuo de todos sus portales web. Este proyecto se enfocó en modernizar la experiencia del usuario, mejorar el rendimiento e implementar un sistema de diseño cohesivo. Un logro reciente destacado fue el desarrollo frontend del sitio oficial de The Voice Brasil, entregado con éxito para el estreno de gran visibilidad del programa a finales de 2025.\n\nMás allá de la ejecución técnica avanzada, aplico sólidos principios de ingeniería y arquitectura de software para crear soluciones frontend robustas y de fácil mantenimiento. También he desarrollado habilidades de liderazgo a través de la coordinación de equipos, fomentando entornos de colaboración e innovación que son cruciales para el éxito de los proyectos. Soy un profesional comprometido y resiliente, reconocido por mi capacidad para adaptarme rápidamente y resolver desafíos complejos con determinación.\n\n¿Listo para convertir tu idea en una experiencia digital de vanguardia? Hablemos.",
       services: {
-        softwareEngineer: "Ingeniero de Software",
-        softwareArchitect: "Desarrollador Front-end",
-        softwareDeveloper: "Desarrollador IoT",
-        techLead: "Desarrollador Full Stack",
+        frontendEngineer: {
+          title: "Ingeniero Frontend",
+          description:
+            "Arquitectura de sistemas frontend escalables y soluciones técnicas avanzadas.",
+        },
+        frontendDeveloper: {
+          title: "Desarrollador Frontend",
+          description: "Desarrollo de interfaces modernas con React, TypeScript y Next.js.",
+        },
+        frontendConsultant: {
+          title: "Consultor Frontend",
+          description:
+            "Consultoría estratégica en tecnologías frontend y optimización de proyectos.",
+        },
       },
     },
     experience: {
       title: "Experiencia",
       experiences: {
         nous: {
-          title: "Desarrollador Front-end Senior",
+          title: "Consultor Front-end Senior",
           points: [
             "Desarrollo y mantenimiento de aplicaciones web modernas utilizando React.js, TypeScript, Next.js y otras tecnologías de vanguardia.",
             "Prestación de consultoría técnica especializada para SBT Lab, contribuyendo a proyectos innovadores en el área de medios y tecnología.",
@@ -447,6 +568,26 @@ export const translations: Record<string, Translations> = {
       title: "Proyectos",
       subtitle: "Mi trabajo",
       items: {
+        theVoiceBrasil2025: {
+          description:
+            "Sitio web oficial del programa The Voice Brasil 2025 para SBT, desarrollado con Next.js, TypeScript y TailwindCSS. Entrega de alto impacto para el estreno del programa en la emisora, con enfoque en rendimiento, experiencia del usuario e integración con redes sociales.",
+        },
+        sbtDoBem: {
+          description:
+            "Plataforma de responsabilidad social de SBT, desarrollada con React, Next.js y sistema de diseño propio. Portal dedicado a proyectos sociales, campañas benéficas y acciones de impacto social de la emisora.",
+        },
+        sbtUIKit: {
+          description:
+            "Sistema de diseño propietario de SBT desarrollado con React, TypeScript, Vite, Storybook y CSS Modules. Biblioteca de componentes reutilizables que garantiza consistencia visual y acelera el desarrollo en todos los portales de la emisora.",
+        },
+        sbtPremiado: {
+          description:
+            "Plataforma de premios y reconocimientos de SBT, desarrollada con Next.js e integración con APIs internas. Sistema para gestión de campañas promocionales, sorteos y programas de fidelidad de la emisora.",
+        },
+        sbtPortalsRelayout: {
+          description:
+            "Rediseño completo y modernización de todos los portales web de SBT (sbt.com.br, noticias, deportes, TV), implementando arquitectura escalable con Next.js, sistema de diseño unificado, optimización de rendimiento y experiencia del usuario mejorada.",
+        },
         marketplace: {
           description:
             "Marketplace completo desarrollado con tRPC, TypeScript, Payload CMS, garantizando type-safety y rendimiento optimizado.",
@@ -501,6 +642,11 @@ export const translations: Record<string, Translations> = {
       alerts: {
         success: "Gracias. Me pondré en contacto pronto.",
         error: "Ups, algo salió mal. Por favor intenta de nuevo.",
+      },
+      directContact: {
+        title: "O contáctame directamente:",
+        linkedin: "LinkedIn",
+        whatsapp: "WhatsApp",
       },
     },
     backToTop: {

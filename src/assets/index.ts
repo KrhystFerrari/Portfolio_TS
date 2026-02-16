@@ -20,12 +20,16 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import mui from "./tech/mui.png";
+import nextjs from "./tech/nextjs.png";
+import vitejs from "./tech/vite-js.png";
+import storybook from "./tech/storybook.webp";
 
 import Pegasus from "./company/Pegasus.png";
 import perfil from "./company/perfil.png";
 import iiitek from "./company/iiitek.png";
 import sifat from "./company/sifat.jpg";
 import nous from "./company/nous_logo.jpeg";
+import sbt from "./company/logo-sbt.webp";
 
 import dinamometro from "./dinamometro.png";
 import waymenu from "./waymenu.jpg";
@@ -37,6 +41,11 @@ import gss from "./gss.png";
 import siteIiitek from "./site-iiitek.png";
 import a3 from "./a3.png";
 import agritech from "./agritech.png";
+import thevoice from "./thevoice.png";
+import sbtdobem from "./sbtdobem.png";
+import uikit from "./uikit.png";
+import premiado from "./premiado.png";
+import relayout from "./relayout.png";
 
 export {
   logo,
@@ -60,10 +69,14 @@ export {
   tailwind,
   typescript,
   mui,
+  nextjs,
+  vitejs,
+  storybook,
   iiitek,
   sifat,
   Pegasus,
   nous,
+  sbt,
   perfil,
   dinamometro,
   waymenu,
@@ -75,4 +88,9 @@ export {
   siteIiitek,
   a3,
   agritech,
+  thevoice,
+  sbtdobem,
+  uikit,
+  premiado,
+  relayout,
 };

@@ -1,5 +1,8 @@
 import React, { Component, type ReactNode } from "react";
-import Model3DFallback from "./Model3DFallback";
+import HeroFallback from "./HeroFallback";
+import TechFallback from "./TechFallback";
+import EarthFallback from "./EarthFallback";
+import StarsFallback from "./StarsFallback";
 
 interface Props {
   children: ReactNode;
@@ -27,7 +30,23 @@ class CanvasErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      return <Model3DFallback type={this.props.fallbackType} className={this.props.className} />;
+      // Renderizar o fallback apropriado baseado no tipo
+      switch (this.props.fallbackType) {
+        case "hero":
+          return <HeroFallback />;
+        case "tech":
+          return <TechFallback />;
+        case "earth":
+          return (
+            <div className={this.props.className}>
+              <EarthFallback />
+            </div>
+          );
+        case "stars":
+          return <StarsFallback />;
+        default:
+          return <HeroFallback />;
+      }
     }
 
     return this.props.children;

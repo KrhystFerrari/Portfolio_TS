@@ -31,23 +31,23 @@ const BackToTop: React.FC = () => {
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.5, y: 20 }}
           whileHover={{
-            scale: 1.05,
-            backgroundColor: "#100d25",
+            scale: 1.1,
+            boxShadow: "0 0 30px rgba(0, 255, 150, 0.8)",
           }}
-          whileTap={{ scale: 0.95 }}
+          whileTap={{ scale: 0.9 }}
           transition={{
-            duration: 0.2,
-            ease: "easeInOut",
+            duration: 0.4,
+            ease: [0.25, 0.46, 0.45, 0.94],
           }}
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 bg-tertiary text-secondary p-3 sm:p-4 rounded-full shadow-lg border border-secondary/20 backdrop-blur-sm hover:text-white transition-colors duration-200"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 bg-[#0d1117] text-[#00ff96] p-3 sm:p-4 rounded-full shadow-[0_0_20px_rgba(0,255,150,0.3)] border-2 border-[#00ff96]/50 backdrop-blur-sm hover:border-[#00ff96] transition-colors duration-300"
           aria-label={t.backToTop.title}
           title={t.backToTop.title}
         >
@@ -62,7 +62,6 @@ const BackToTop: React.FC = () => {
             <path
               d="M12 4L4 12L6.83 14.83L11 10.66V20H13V10.66L17.17 14.83L20 12L12 4Z"
               fill="currentColor"
-              className="drop-shadow-sm"
             />
           </svg>
         </motion.button>
